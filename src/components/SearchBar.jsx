@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   const fetchData = (value) => {
     fetch(
-      `https://bibliografisk.bs.no/v1/publications?query=${value}&&limit=50`
+      `https://bibliografisk.bs.no/v1/publications?query=${value}&filter=type%3A(audiobook%20OR%20book)&limit=80`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -25,8 +25,6 @@ const SearchBar = () => {
   };
   const getType = (type) => {
     if (type === "Book") return "Bok";
-    if (type === "VideoGame") return "Spill";
-    if (type === "Movie") return "Film";
     if (type === "Audiobook") return "Lydbok";
   };
 
