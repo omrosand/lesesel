@@ -3,6 +3,7 @@ import { useState } from "react";
 const SearchBar = () => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState([]);
+  const [total, setTotal] = useState();
 
   const fetchData = (value) => {
     fetch(
@@ -11,6 +12,7 @@ const SearchBar = () => {
       .then((response) => response.json())
       .then((data) => {
         setResult(data.records);
+        setTotal(data.total);
         console.log(data.records);
       });
   };
@@ -20,6 +22,12 @@ const SearchBar = () => {
   };
   const handleClick = (value) => {
     fetchData(value);
+  };
+  const getType = (type) => {
+    if (type === "Book") return "Bok";
+    if (type === "VideoGame") return "Spill";
+    if (type === "Movie") return "Film";
+    if (type === "Audiobook") return "Lydbok";
   };
 
   return (
@@ -34,11 +42,13 @@ const SearchBar = () => {
           Søk
         </button>
       </form>
+      <h3>{total} treff på søk:</h3>
       <ul className="results">
         {result.map((book) => (
           <li key={book.id}>
             <img src={book.image?.thumbnailUrl} alt="placeholder" />
-            <h2>{book.name}</h2>
+            <h2 className="title">{book.name}</h2>
+            <p>{getType(book["@type"])}</p>
           </li>
         ))}
       </ul>
