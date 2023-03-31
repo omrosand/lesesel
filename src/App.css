@@ -16,6 +16,10 @@ h1 {
   justify-content: center;
   gap: 12px;
 }
+.mainNav a {
+  text-decoration: none;
+}
+
 .cardList {
   list-style: none;
   display: flex;
@@ -28,11 +32,28 @@ h1 {
   min-height: 250px;
   padding-top: 10px;
 }
+
 .searchContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.searchField  {
+  padding: 10px;
+  border: none;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.searchButton {
+  padding: 10px;
+  border: none; 
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
 .results {
   list-style: none;
   display: flex;

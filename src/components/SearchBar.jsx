@@ -32,11 +32,16 @@ const SearchBar = () => {
     <div className="inputWrapper">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
+          className="searchField"
           placeholder="Skriv her..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
-        <button type="submit" onClick={(e) => handleClick(input)}>
+        <button
+          className="searchButton"
+          type="submit"
+          onClick={(e) => handleClick(input)}
+        >
           Søk
         </button>
       </form>
