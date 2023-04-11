@@ -93,3 +93,62 @@ h1 {
 .title {
   font-size: 1.1rem;
 }
+
+
+/* home page */
+.homeCardList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.homeCard {
+  border: 3px solid rgb(116, 116, 116);
+  min-width: 200px;
+  min-height: 250px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 50%;
+  margin-left: 70px;
+}
+
+.homeCard img {
+  margin: 20px;
+  max-width: 30vh;
+  height: auto;
+  width: 100%;
+}
+
+button {
+  align-items: center;
+  border: 2px solid rgb(116, 116, 116);
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  padding: 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color:rgb(116, 116, 116) ;
+  color: black;
+}
