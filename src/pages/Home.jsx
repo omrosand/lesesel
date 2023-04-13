@@ -16,7 +16,7 @@ const Home = () => {
               vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
             </p>
             <button>
-              <Link to="/registrerbok">Registrer bok</Link>
+              <Link to="/registrerbok" className="homeLink">Registrer bok</Link>
             </button>
           </article>
         </li>
@@ -32,7 +32,22 @@ const Home = () => {
               vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
             </p>
             <button>
-              <Link to="/scoreboard">Gå til scoreboard</Link>
+              <Link to="/scoreboard" className="homeLink">Gå til scoreboard</Link>
+            </button>
+          </article>
+        </li>
+                <li className="homeCard">
+          <img src="/src/img/book.jpg" />
+          <article>
+            <h3>Ønsker å lese</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              luctus ipsum in pulvinar ultricies. Donec dignissim massa sem, non
+              placerat mauris elementum ac. Praesent pharetra fermentum enim
+              vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
+            </p>
+            <button>
+              <Link to="/scoreboard" className="homeLink">Ønsker å lese</Link>
             </button>
           </article>
         </li>
