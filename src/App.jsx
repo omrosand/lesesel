@@ -7,12 +7,26 @@ import Settings from "./pages/Settings";
 import MyBooks from "./pages/MyBooks";
 import Friends from "./pages/Friends";
 import RegisterBook from "./pages/RegisterBook";
+import Faq from "./pages/Faq";
+import Favorites from "./pages/Favorites";
+import ReadBooks from "./pages/ReadBooks";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Lesesel</h1>
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/minprofil" element={<MyProfile />} />
+        <Route path="/mineboker" element={<MyBooks />} />
+        <Route path="/venner" element={<Friends />} />
+        <Route path="/oftestiltesporsmal" element={<Faq />} />
+        <Route path="/innstillinger" element={<Settings />} />
+        <Route path="/registrerbok" element={<RegisterBook />} />
+        <Route path="/lesteboker" element={<ReadBooks />} />
+        <Route path="/favoritter" element={<Favorites />} />
+      </Routes>
+    </>
   );
 }
 
