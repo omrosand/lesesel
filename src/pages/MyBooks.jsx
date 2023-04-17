@@ -7,10 +7,19 @@ const MyBooks = () => {
       <section>
         <ul className="cardList">
           <li className="card">
-            <Link to="/registrerbok">Registrer bok</Link>
+            <img src="../src/img/Sel11.png" />
+            <button>
+              <Link to="/registrerbok">Registrer bok</Link>
+            </button>
           </li>
-          <li className="card">Leste bøker</li>
-          <li className="card">Ønsker å lese</li>
+          <li className="card">
+            <img src="../src/img/Sel12.png" />
+            <button>Leste bøker</button>
+          </li>
+          <li className="card">
+            <img src="../src/img/Sel6.png" />
+            <button>Ønsker å lese</button>
+          </li>
         </ul>
       </section>
     </>
