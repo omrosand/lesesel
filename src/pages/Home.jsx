@@ -6,7 +6,7 @@ const Home = () => {
       <h1>Hjem</h1>
       <ul children="homeCardList">
         <li className="homeCard">
-          <img src="/src/img/book.jpg" />
+          <img src="/src/img/Sel11.png" />
           <article>
             <h3>Velkommen til Lesesel!</h3>
             <p>
@@ -22,7 +22,7 @@ const Home = () => {
         </li>
 
         <li className="homeCard">
-          <img src="/src/img/book.jpg" />
+          <img src="/src/img/Sel7.png" />
           <article>
             <h3>Sjekk scoreboard</h3>
             <p>
@@ -37,7 +37,7 @@ const Home = () => {
           </article>
         </li>
                 <li className="homeCard">
-          <img src="/src/img/book.jpg" />
+          <img src="/src/img/Sel6.png" />
           <article>
             <h3>Ønsker å lese</h3>
             <p>
