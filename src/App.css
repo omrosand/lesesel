@@ -152,3 +152,15 @@ button:hover {
   background-color:rgb(116, 116, 116) ;
   color: white;
 }
+
+/* Settings */
+.settings {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.settings button {
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}

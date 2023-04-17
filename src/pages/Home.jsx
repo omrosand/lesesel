@@ -16,7 +16,9 @@ const Home = () => {
               vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
             </p>
             <button>
-              <Link to="/registrerbok" className="homeLink">Registrer bok</Link>
+              <Link to="/registrerbok" className="homeLink">
+                Registrer bok
+              </Link>
             </button>
           </article>
         </li>
@@ -32,11 +34,13 @@ const Home = () => {
               vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
             </p>
             <button>
-              <Link to="/scoreboard" className="homeLink">Gå til scoreboard</Link>
+              <Link to="/scoreboard" className="homeLink">
+                Gå til scoreboard
+              </Link>
             </button>
           </article>
         </li>
-                <li className="homeCard">
+        <li className="homeCard">
           <img src="/src/img/Sel6.png" />
           <article>
             <h3>Ønsker å lese</h3>
@@ -47,7 +51,9 @@ const Home = () => {
               vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
             </p>
             <button>
-              <Link to="/scoreboard" className="homeLink">Ønsker å lese</Link>
+              <Link to="/scoreboard" className="homeLink">
+                Ønsker å lese
+              </Link>
             </button>
           </article>
         </li>
