@@ -15,8 +15,8 @@ const Settings = () => {
         <button>Bytt språk</button>
 
         <h2>Bytte utseende?</h2>
-        <p>Blire for lyst for dæ? Trykk på knappen under så blire mørtt vettu?</p>
-        <button onClick={darkMode}>Mørtt/Ikke mørtt</button>
+        <p>Dersom det blir for lyse farger for deg, så kan du velge mørkere farge ved å trykke på knappen under.</p>
+        <button onClick={darkMode}>Mørkt tema / Lyst tema</button>
 
         <h2>Slette bruker</h2>
         <p>Når du har slettet brukeren din, er det ingen vei tilbake.</p>
