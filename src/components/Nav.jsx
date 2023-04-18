@@ -6,8 +6,13 @@ import {
   FaUserFriends,
   FaQuestionCircle,
   FaCog,
+  FaCheckCircle,
+  FaStar,
+  FaMedal,
 } from "react-icons/fa";
 import { HiLogout } from "react-icons/hi";
+import { GiArchiveRegister } from "react-icons/gi";
+import { useState } from "react";
 
 const navElements = [
   {
@@ -28,17 +33,17 @@ const navElements = [
       {
         title: "Registrer",
         path: "/registrerbok",
-        icon: <FaBook />,
+        icon: <GiArchiveRegister />,
       },
       {
         title: "Leste bøker",
         path: "/lesteboker",
-        icon: <FaBook />,
+        icon: <FaCheckCircle />,
       },
       {
         title: "Favoritter",
         path: "/favoritter",
-        icon: <FaBook />,
+        icon: <FaStar />,
       },
     ],
   },
@@ -46,6 +51,13 @@ const navElements = [
     title: "Venner",
     path: "/venner",
     icon: <FaUserFriends />,
+    dropdown: [
+      {
+        title: "Scoreboard",
+        path: "/scoreboard",
+        icon: <FaMedal />,
+      },
+    ],
   },
   {
     title: "Ofte stilte spørsmål",
@@ -65,13 +77,42 @@ const navElements = [
 ];
 
 const Nav = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setActiveDropdown(index);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
+
   return (
     <nav className="mainNav">
       <ul>
-        {navElements.map((element) => (
-          <li className="navElement" key={element.title}>
-            {element.icon}
-            <Link to={element.path}>{element.title}</Link>
+        {navElements.map((element, index) => (
+          <li
+            className="navElement"
+            key={element.title}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div>
+              {element.icon}
+              <Link to={element.path}>{element.title}</Link>
+            </div>
+            {element.dropdown && activeDropdown === index && (
+              <ul className="dropdown">
+                {element.dropdown.map((item) => (
+                  <li key={item.title}>
+                    <div>
+                      {item.icon}
+                      <Link to={item.path}>{item.title}</Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

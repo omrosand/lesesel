@@ -3,6 +3,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  min-height: 100vh;
+}
+
+/* Dark mode toggle */
+body {
+  background-color: rgb(127, 251, 255);
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 h1 {
@@ -10,28 +22,73 @@ h1 {
   line-height: 1.1;
   margin: 1em 0;
 }
+/* Navigation */
+
+.mainNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .mainNav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
+
 .navElement {
-  border: 1px solid black;
-  padding: 10px 12px;
+  position: relative;
+}
+
+.navElement div {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 10px 12px;
   background-color: whitesmoke;
-  color: rgb(72, 72, 72);
-}
-.navElement a {
+  color: rgb(35, 146, 194);
   text-decoration: none;
-  color: rgb(72, 72, 72);
-}
-.mainNav a {
-  text-decoration: none;
+  cursor: pointer;
 }
 
+.navElement:hover > .dropdown {
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 160px;
+  z-index: 1;
+  padding: 5px 0;
+  margin: 0;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 2px 0px;
+}
+
+.dropdown a {
+  color: black;
+  text-decoration: none;
+}
+.dropdown a:hover {
+  color: rgb(58, 102, 150);
+}
+/* Search */
 .cardList {
   list-style: none;
   display: flex;
@@ -41,8 +98,17 @@ h1 {
 .card {
   border: 3px solid rgb(116, 116, 116);
   min-width: 200px;
-  min-height: 250px;
+  min-height: 300px;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(246, 255, 127);
+}
+
+.card img {
+  width: 13vh;
 }
 
 .searchContainer {
@@ -51,7 +117,7 @@ h1 {
   align-items: center;
 }
 
-.searchField  {
+.searchField {
   padding: 10px;
   border: none;
   margin-bottom: 5px;
@@ -60,7 +126,7 @@ h1 {
 
 .searchButton {
   padding: 10px;
-  border: none; 
+  border: none;
   margin-left: 5px;
   margin-bottom: 5px;
   font-size: 17px;
@@ -94,6 +160,10 @@ h1 {
   font-size: 1.1rem;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 
 /* home page */
 .homeCardList {
@@ -113,6 +183,7 @@ h1 {
   display: flex;
   flex-direction: row;
   text-align: left;
+  background-color: rgb(246, 255, 127);
 }
 
 article {
@@ -125,7 +196,7 @@ article {
 
 .homeCard img {
   margin: 20px;
-  max-width: 30vh;
+  max-width: 20vh;
   height: auto;
   width: 100%;
 }
@@ -140,15 +211,30 @@ button {
   font-weight: 500;
   cursor: pointer;
   width: fit-content;
-  padding: 15px;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-a {
+.homeLink {
   color: black;
   text-decoration: none;
 }
 
 button:hover {
-  background-color:rgb(116, 116, 116) ;
-  color: black;
+  background-color: rgb(116, 116, 116);
+  color: white;
+}
+
+/* Settings */
+.settings {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.settings button {
+  margin-top: 2vh;
+  margin-bottom: 5vh;
 }
