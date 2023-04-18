@@ -77,42 +77,42 @@ const navElements = [
 ];
 
 const Nav = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
+  const handleMouseEnter = (index) => {
+    setActiveDropdown(index);
   };
 
   const handleMouseLeave = () => {
-    setShowDropdown(false);
+    setActiveDropdown(null);
   };
 
   return (
     <nav className="mainNav">
       <ul>
-        {navElements.map((element) => (
+        {navElements.map((element, index) => (
           <li
             className="navElement"
             key={element.title}
-            onMouseEnter={element.dropdown ? handleMouseEnter : null}
-            onMouseLeave={element.dropdown ? handleMouseLeave : null}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
           >
             <div>
               {element.icon}
               <Link to={element.path}>{element.title}</Link>
             </div>
-            <ul className="dropdown">
-              {showDropdown && element.dropdown
-                ? element.dropdown.map((element) => (
-                    <li key={element.title}>
-                      <div>
-                        {element.icon}
-                        <Link to={element.path}>{element.title}</Link>
-                      </div>
-                    </li>
-                  ))
-                : null}
-            </ul>
+            {element.dropdown && activeDropdown === index && (
+              <ul className="dropdown">
+                {element.dropdown.map((item) => (
+                  <li key={item.title}>
+                    <div>
+                      {item.icon}
+                      <Link to={item.path}>{item.title}</Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

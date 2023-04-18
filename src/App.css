@@ -22,32 +22,73 @@ h1 {
   line-height: 1.1;
   margin: 1em 0;
 }
+/* Navigation */
+
+.mainNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .mainNav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
+
+.navElement {
+  position: relative;
+}
+
 .navElement div {
-  border: 1px solid black;
-  padding: 10px 12px;
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 10px 12px;
   background-color: whitesmoke;
-  color: rgb(72, 72, 72);
-}
-.navElement a {
+  color: rgb(35, 146, 194);
   text-decoration: none;
-  color: rgb(72, 72, 72);
-}
-.dropdown {
-  display: flex;
-  flex-direction: column;
-}
-.mainNav a {
-  text-decoration: none;
+  cursor: pointer;
 }
 
+.navElement:hover > .dropdown {
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 160px;
+  z-index: 1;
+  padding: 5px 0;
+  margin: 0;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 2px 0px;
+}
+
+.dropdown a {
+  color: black;
+  text-decoration: none;
+}
+.dropdown a:hover {
+  color: rgb(58, 102, 150);
+}
+/* Search */
 .cardList {
   list-style: none;
   display: flex;
