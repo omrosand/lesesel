@@ -1,3 +1,6 @@
+import { Helmet } from 'react-helmet';
+
+
 const Settings = () => {
   function darkMode() {
     const element = document.body;
@@ -5,6 +8,9 @@ const Settings = () => {
   } 
   return (
     <>
+    <Helmet>
+      <title>Innstillinger</title>
+    </Helmet>
       <h1>Innstillinger</h1>
       <article className="settings">
         <h2>Bytte språk?</h2>

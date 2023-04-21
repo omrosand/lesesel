@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
+
 
 const Home = () => {
   return (
     <>
+    <Helmet>
+      <title>Velkommen til Lesesel</title>
+    </Helmet>
       <h1>Hjem</h1>
       <ul children="homeCardList">
         <li className="homeCard">
