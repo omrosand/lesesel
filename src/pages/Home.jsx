@@ -20,7 +20,7 @@ const Home = () => {
               dele hva du leser og konkurrere med venner!  
             </p>
             <p>
-              Start reisen med Lesesel ved å registrer din først bok ved å trykke på knappen under!   
+              Start reisen med Lesesel ved å registrere din først bok ved å trykke på knappen under!   
             </p>
             <button>
               <Link to="/registrerbok" className="homeLink">
