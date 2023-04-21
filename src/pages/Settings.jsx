@@ -1,3 +1,6 @@
+import { Helmet } from 'react-helmet';
+
+
 const Settings = () => {
   function darkMode() {
     const element = document.body;

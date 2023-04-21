@@ -1,4 +1,6 @@
 import SearchBar from "../components/SearchBar";
+import { Helmet } from 'react-helmet';
+
 
 const RegisterBook = () => {
   return (
