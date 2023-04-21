@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const MyBooks = () => {
   return (
     <>
+      <Helmet>
+        <title>Mine bøker</title>
+      </Helmet>
+      
       <h1>Mine Bøker</h1>
       <section>
         <ul className="cardList">
