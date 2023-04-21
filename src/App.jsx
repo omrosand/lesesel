@@ -10,6 +10,7 @@ import RegisterBook from "./pages/RegisterBook";
 import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
+import TestUsers from "./components/TestUsers";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
       </Routes>
+      <TestUsers />
     </>
   );
 }

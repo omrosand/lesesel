@@ -24,7 +24,7 @@ const Settings = () => {
         <p>Dersom det blir for lyse farger for deg, så kan du velge mørkere farge ved å trykke på knappen under.</p>
         <button onClick={darkMode}>Mørkt tema / Lyst tema</button>
 
-        <h2>Slette bruker</h2>
+        <h2>Slette bruker?</h2>
         <p>Når du har slettet brukeren din, er det ingen vei tilbake.</p>
         <button>Slett bruker</button>
       </article>
