@@ -10,10 +10,12 @@ const Home = () => {
           <article>
             <h3>Velkommen til Lesesel!</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              luctus ipsum in pulvinar ultricies. Donec dignissim massa sem, non
-              placerat mauris elementum ac. Praesent pharetra fermentum enim
-              vitae tempus. Ut maximus nisl vitae rhoncus ultricies.
+              Er du glad i å lese? Da har du kommet til det rette stedet! 
+              Hos Lesesel kan du tjene poeng ved å lese bøker eller høre på lydbøker,
+              del hva du leser og konkurrer med venner!  
+            </p>
+            <p>
+              Start reisen med å registrer din først bok ved å trykke på knappen under!   
             </p>
             <button>
               <Link to="/registrerbok" className="homeLink">
