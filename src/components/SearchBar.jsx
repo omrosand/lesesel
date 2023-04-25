@@ -49,7 +49,14 @@ const SearchBar = () => {
       <ul className="results">
         {result.map((book) => (
           <li key={book.id}>
-            <img src={book.image?.thumbnailUrl} alt="placeholder" />
+            <img
+              src={
+                book.image
+                  ? book.image.thumbnailUrl
+                  : "/src/assets/placeholder.jpg"
+              }
+              alt="placeholder"
+            />
             <h2 className="title">{book.name}</h2>
             <p>{getType(book["@type"])}</p>
           </li>
