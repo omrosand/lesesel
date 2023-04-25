@@ -1,25 +1,23 @@
-import { Helmet } from 'react-helmet';
-import { useState, useEffect } from 'react';
+import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
 import { client } from "../utils/sanityclient";
 
-
 const MyProfile = () => {
-  const [users, setUsers] = useState(null) 
+  const [users, setUsers] = useState(null);
 
-    async function fetchUsers() {
-        const data = await client.fetch(`*[_type == "users"]`)
-        return data
-    }
+  async function fetchUsers() {
+    const data = await client.fetch(`*[_type == "users"]`);
+    return data;
+  }
 
-    async function getUsers() {
-        const data = await fetchUsers()
-        setUsers(data)
-    }
+  async function getUsers() {
+    const data = await fetchUsers();
+    setUsers(data);
+  }
 
-    useEffect(() => {
-        getUsers()
-    }, [])
-    console.log(users)
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <>
@@ -27,7 +25,7 @@ const MyProfile = () => {
         <title>Min profil</title>
       </Helmet>
       <h1>Min Profil</h1>
-      <img alt="avatar" />
+      <img src={users?.avatar?.asset?.url} />
       <h2>{users?.username}'s profil</h2>
 
       <h3>Min poengscore</h3>

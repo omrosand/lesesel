@@ -18,5 +18,5 @@ export default function TestUsers() {
     useEffect(() => {
         getUsers()
     }, [])
-    
+    console.log(users)
 }
