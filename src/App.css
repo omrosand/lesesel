@@ -8,14 +8,14 @@
 
 /* Dark mode toggle */
 body {
-  background-image: url("./assets/lesesel_dag.PNG");
+  background-image: url("./assets/lesesel_dag.webp");
   background-repeat: no-repeat;
   background-color: rgb(127, 251, 255);
   color: black;
 }
 
 .dark-mode {
-  background-image: url("./assets/lesesel_natt.PNG");
+  background-image: url("./assets/lesesel_natt.webp");
   background-repeat: no-repeat;
   background-color: black;
   color: white;
