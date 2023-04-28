@@ -69,11 +69,6 @@ const navElements = [
     path: "/innstillinger",
     icon: <FaCog />,
   },
-  {
-    title: "Logg ut",
-    path: "/loggut",
-    icon: <HiLogout />,
-  },
 ];
 
 const Nav = () => {
@@ -115,6 +110,12 @@ const Nav = () => {
             )}
           </li>
         ))}
+        <li className="navElement">
+          <div>
+            <HiLogout />
+            <Link to="/login">Logg inn</Link>
+          </div>
+        </li>
       </ul>
     </nav>
   );

@@ -11,6 +11,7 @@ import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
 import TestUsers from "./components/TestUsers";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/registrerbok" element={<RegisterBook />} />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <TestUsers />
     </>
