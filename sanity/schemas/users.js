@@ -9,6 +9,11 @@ export default {
             title: "Brukernavn",
         }, 
         {
+            name: "avatar",
+            type: "image",
+            title: "Avatar"
+        },
+        {
             name: "invites",
             type: "array",
             of: [{type: 'invites'}]

@@ -203,7 +203,7 @@ article {
 
 .homeCard img {
   margin: 20px;
-  max-width: 25vh;
+  max-width: 18vh;
   height: auto;
   width: 100%;
 }
@@ -245,4 +245,27 @@ button:hover {
   margin-top: 2vh;
   margin-bottom: 5vh;
 }
+
+/*min profil*/
+.myProfile {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2vh;
+  text-align: left;
+}
+.myProfile h2 {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+.myProfile h3 {
+  margin-top: 2vh;
+}
+.avatar {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
 
