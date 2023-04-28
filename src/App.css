@@ -11,6 +11,7 @@ body {
   background-image: url("./assets/lesesel_dag.PNG");
   background-repeat: no-repeat;
   background-color: rgb(127, 251, 255);
+  background-size: cover;
   color: black;
 }
 
@@ -18,6 +19,7 @@ body {
   background-image: url("./assets/lesesel_natt.PNG");
   background-repeat: no-repeat;
   background-color: black;
+  background-size: cover;
   color: white;
 }
 
@@ -252,6 +254,8 @@ button:hover {
   margin: 0 auto;
   margin-top: 2vh;
   text-align: left;
+  background-color: rgba(246, 255, 127, 0.8);
+  padding: 4vh;
 }
 .myProfile h2 {
   margin-top: 2vh;
