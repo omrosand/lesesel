@@ -11,16 +11,16 @@ const Home = () => {
       <h1>Hjem</h1>
       <ul children="homeCardList">
         <li className="homeCard">
-          <img src="/src/img/Sel11.png" alt="sel med bok"/>
+          <img src="/src/img/Sel11.webp" alt="sel med bok"/>
           <article>
             <h2>Velkommen til Lesesel!</h2>
             <p>
               Er du glad i å lese? Da har du kommet til det rette stedet! 
               Hos Lesesel kan du tjene poeng ved å lese bøker eller høre på lydbøker,
-              del hva du leser og konkurrer med venner!  
+              dele hva du leser og konkurrere med venner!  
             </p>
             <p>
-              Start reisen med å registrer din først bok ved å trykke på knappen under!   
+              Start reisen med Lesesel ved å registrere din først bok ved å trykke på knappen under!   
             </p>
             <button>
               <Link to="/registrerbok" className="homeLink">
@@ -31,7 +31,7 @@ const Home = () => {
         </li>
 
         <li className="homeCard">
-          <img src="/src/img/Sel7.png" alt="sel med solbriller" />
+          <img src="/src/img/Sel7.webp" alt="sel med solbriller" />
           <article>
             <h2>Sjekk scoreboard</h2>
             <p>
@@ -46,7 +46,7 @@ const Home = () => {
           </article>
         </li>
         <li className="homeCard">
-          <img src="/src/img/Sel6.png" alt="sel med sjokkert ansikt" />
+          <img src="/src/img/Sel6.webp" alt="sel med sjokkert ansikt" />
           <article>
             <h2>Ønsker å lese</h2>
             <p>

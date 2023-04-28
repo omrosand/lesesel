@@ -58,7 +58,10 @@ const SearchBar = () => {
               alt="placeholder"
             />
             <h2 className="title">{book.name}</h2>
-            <p>{getType(book["@type"])}</p>
+            <p>
+              {getType(book["@type"]).toUpperCase()}
+              {book.audience[0] ? " | " + book.audience[0].name : null}
+            </p>
           </li>
         ))}
       </ul>

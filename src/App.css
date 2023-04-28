@@ -157,6 +157,7 @@ h1 {
   padding: 30px;
   min-width: 250px;
   background-color: rgba(246, 255, 127, 0.8);
+  color: black;
 }
 .results li img {
   max-width: 200px;
