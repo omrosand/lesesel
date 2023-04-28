@@ -206,6 +206,7 @@ article {
   max-width: 18vh;
   height: auto;
   width: 100%;
+  object-fit: contain;
 }
 
 button {
