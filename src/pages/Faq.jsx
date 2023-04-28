@@ -8,8 +8,8 @@ const Faq = () => {
         <title>Ofte stilte spørsmål</title>
       </Helmet>
       <h1>Ofte stilte spørsmål</h1>
-      <article>
 
+      <article className='faq'>
         <h2>Hva er Lesesel?</h2>
           <p>Svar</p>
 
@@ -25,12 +25,11 @@ const Faq = () => {
         <h2>Spørsmål </h2>
           <p>Svar</p>
 
+        <section>
+          <h3>Har du andre spørsmål? </h3>
+          <p>Kontakt oss: <a href="epost@eksempel.no">epost@eksempel.no</a></p>
+        </section>
       </article>
-      <footer>
-        <h3>Har du andre spørsmål? </h3>
-        <p>Kontakt oss </p>
-        <a href="epost@eksempel.no">epost@eksempel.no</a>
-      </footer>
     </>
   );
 };
