@@ -17,10 +17,10 @@ const Home = () => {
             <p>
               Er du glad i å lese? Da har du kommet til det rette stedet! 
               Hos Lesesel kan du tjene poeng ved å lese bøker eller høre på lydbøker,
-              del hva du leser og konkurrer med venner!  
+              dele hva du leser og konkurrere med venner!  
             </p>
             <p>
-              Start reisen med å registrer din først bok ved å trykke på knappen under!   
+              Start reisen med Lesesel ved å registrere din først bok ved å trykke på knappen under!   
             </p>
             <button>
               <Link to="/registrerbok" className="homeLink">
