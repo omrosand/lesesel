@@ -1,0 +1,4 @@
+{
+    "extends": "@sanity/exlint-config-studio",
+    "eslint.workingDirectories": ["./sanity"]
+}
