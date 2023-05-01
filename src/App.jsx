@@ -14,6 +14,15 @@ import TestUsers from "./components/TestUsers";
 import Login from "./pages/Login";
 
 function App() {
+  const savedUser = () => {
+    const storedUser = localStorage.getItem("username");
+    return storedUser !== null ? storedUser : null;
+  };
+  const savedPass = () => {
+    const storedPass = localStorage.getItem("password");
+    return storedPass !== null ? storedPass : null;
+  };
+
   return (
     <>
       <Nav />

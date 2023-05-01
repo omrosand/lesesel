@@ -13,7 +13,10 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
     console.log(username, password);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
   };
 
   return (
