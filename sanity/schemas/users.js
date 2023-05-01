@@ -24,6 +24,11 @@ export default {
             title: "Bøker",
             type: "array",
             of: [{type: 'books'}]
+        },
+        {
+            name: "password",
+            title: "Passord",
+            type: "string"
         }
     ]
 }

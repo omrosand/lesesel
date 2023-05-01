@@ -290,4 +290,53 @@ button:hover {
   margin-top: 4vh; 
 }
 
+/*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
+.topBtn {
+  position: fixed; 
+  width: 13%;
+  right: 30px;
+  bottom: 20px;
+  font-size: 15px;
+  z-index: 1;
+  cursor: pointer;
+  color: black;
+  background-color: rgb(0, 231, 89);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
 
+.topBtn:hover {
+  background-color: black;
+  color: rgb(0, 231, 89);
+}
+
+/*Nav scoreboard*/
+.navScoreboard {
+  width: 350px;
+  background-color: rgb(0, 231, 89);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  margin: 0 auto;
+  padding: 2vh;
+}
+
+.imgSection {
+  width: auto;
+}
+
+.imgSection img {
+  width: 3.75rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.username {
+  font-weight: 700;
+}
+
+.trophySection ul {
+  list-style-type: none;
+}

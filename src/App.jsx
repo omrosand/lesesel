@@ -11,11 +11,14 @@ import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
 import TestUsers from "./components/TestUsers";
+import ToTopButton from "./components/ToTopButton";
+import NavScoreboard from "./components/NavScoreboard";
 
 function App() {
   return (
     <>
       <Nav />
+      <NavScoreboard />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/minprofil" element={<MyProfile />} />
@@ -28,6 +31,7 @@ function App() {
         <Route path="/favoritter" element={<Favorites />} />
       </Routes>
       <TestUsers />
+      <ToTopButton />
     </>
   );
 }
