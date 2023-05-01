@@ -10,27 +10,29 @@ const MyProfile = () => {
   }
 
   return (
-    <article className="myProfile">
-      <Helmet>
-        <title>Min profil</title>
-      </Helmet>
-      <Users onUsersLoad={handleUsersLoad} />
-      {users && (
-        <>
-          <img
-            className="avatar"
-            src={users?.avatar?.asset?.url}
-            alt="Avatar"
-          />
-          <h2>{users?.username}'s profil</h2>
+    <>
+      <article className="myProfile">
+        <Helmet>
+          <title>Min profil</title>
+        </Helmet>
+        <Users onUsersLoad={handleUsersLoad} />
+        {users && (
+          <>
+            <img
+              className="avatar"
+              src={users?.avatar?.asset?.url}
+              alt="Avatar"
+            />
+            <h2>{users?.username}'s profil</h2>
 
-          <h3>Min poengscore</h3>
-          <p>293</p>
+            <h3>Min poengscore</h3>
+            <p>293</p>
 
-          <h3>Mine trofeer</h3>
-        </>
-      )}
-    </article>
+            <h3>Mine trofeer</h3>
+          </>
+        )}
+      </article>
+    </>
   );
 };
 export default MyProfile;

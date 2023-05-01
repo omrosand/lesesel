@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { client } from "../utils/sanityclient";
+import { Helmet } from "react-helmet";
 
-const Login = () => {
+const Login = ({ setUser, user }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,17 +13,45 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
+    try {
+      const response = await client.fetch(
+        `*[_type == "users" && username == "${username}" && password == "${password}"][0]{
+        username, 
+        avatar {
+          asset-> {
+            url
+          }
+        },
+        books
+      }`
+      );
+
+      if (response) {
+        localStorage.setItem("user", JSON.stringify(response));
+
+        setUser(response);
+      } else {
+        alert("Feil brukernavn eller passord, prøv igjen!");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
     console.log(username, password);
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
   };
 
   return (
     <>
-      <h1>Logg inn</h1>
+      <div>
+        <h2>Du er logget inn som {user?.username}</h2>
+        <img className="avatar" src={user?.avatar?.asset?.url} alt="Avatar" />
+      </div>
+      <Helmet>
+        <title>Logg inn</title>
+      </Helmet>
       <p>
         For å kunne bruke Lesesel må du logge deg inn bla bla bla Donec lacinia
         auctor ante, a vestibulum purus suscipit eleifend. Sed nec volutpat
@@ -54,11 +84,13 @@ const Login = () => {
       </form>
       <button
         onClick={() => {
-          localStorage.removeItem("username");
-          localStorage.removeItem("password");
+          localStorage.removeItem("user");
+          setUser(null);
+          setUsername("");
+          setPassword("");
         }}
       >
-        Slett localStorage
+        Slett localStorage og reset bruker
       </button>
     </>
   );
