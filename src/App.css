@@ -28,6 +28,10 @@ h1 {
   line-height: 1.1;
   margin: 1em 0;
 }
+.introText {
+  max-width: 700px;
+  margin: 1em auto 1em;
+}
 /* Navigation */
 
 .mainNav {
@@ -287,12 +291,12 @@ button:hover {
 }
 
 .faq h3 {
-  margin-top: 4vh; 
+  margin-top: 4vh;
 }
 
 /*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
 .topBtn {
-  position: fixed; 
+  position: fixed;
   width: 13%;
   right: 30px;
   bottom: 20px;
@@ -313,7 +317,8 @@ button:hover {
 
 /*Nav scoreboard*/
 .navScoreboard {
-  width: 350px;
+  width: fit-content;
+  gap: 20px;
   background-color: rgb(0, 231, 89);
   display: flex;
   flex-direction: row;
@@ -321,8 +326,15 @@ button:hover {
   text-align: left;
   margin: 0 auto;
   padding: 2vh;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.75);
 }
-
+.navScoreboard p {
+  font-weight: 600;
+}
+.navScoreboard p a {
+  text-decoration: underline;
+}
 .imgSection {
   width: auto;
 }
@@ -363,4 +375,17 @@ button:hover {
   color: black;
   padding: 5px;
   border-radius: 10px;
+}
+.loggedIn {
+  background-color: rgba(246, 255, 127, 0.8);
+  width: fit-content;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 20px;
+}
+.loggedIn div img {
+  max-width: 300px;
+}
+.loggedIn div div {
+  margin: 1em 0;
 }

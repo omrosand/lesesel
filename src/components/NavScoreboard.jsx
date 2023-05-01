@@ -1,25 +1,29 @@
-import { useState } from "react";
-import Users from "./Users";
+import { Link } from "react-router-dom";
 
-const NavScoreboard = () => {
-  const [users, setUsers] = useState(null);
-
-  function handleUsersLoad(data) {
-    setUsers(data);
-  }
+const NavScoreboard = ({ user }) => {
+  const sumScore = () => {
+    if (user?.books?.length > 0) {
+      let score = 0;
+      user.books.forEach((book) => {
+        if (book.pages) {
+          score += parseInt(book.pages);
+        }
+      });
+      return score;
+    }
+  };
 
   return (
     <article className="navScoreboard">
-      <Users onUsersLoad={handleUsersLoad} />
-      {users && (
+      {user ? (
         <>
           <section className="imgSection">
-            <img src={users?.avatar?.asset?.url} />
+            <img src={user?.avatar?.asset?.url} />
           </section>
 
           <section>
-            <p className="username">{users?.username}</p>
-            <p>Poengscore:</p>
+            <p className="username">{user?.username}</p>
+            <p>Poengscore: {sumScore()}</p>
           </section>
 
           <section className="trophySection">
@@ -29,6 +33,10 @@ const NavScoreboard = () => {
             </ul>
           </section>
         </>
+      ) : (
+        <p>
+          Logg inn <Link to="/login">her</Link> for å bruke Lesesel
+        </p>
       )}
     </article>
   );

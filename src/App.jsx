@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <Nav />
-      <NavScoreboard />
+      <Nav user={user} />
+      <NavScoreboard user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/minprofil" element={<MyProfile user={user} />} />

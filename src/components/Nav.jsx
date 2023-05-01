@@ -71,7 +71,7 @@ const navElements = [
   },
 ];
 
-const Nav = () => {
+const Nav = ({ user }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -113,7 +113,11 @@ const Nav = () => {
         <li className="navElement">
           <div>
             <HiLogout />
-            <Link to="/login">Logg inn</Link>
+            {!user ? (
+              <Link to="/login">Logg inn</Link>
+            ) : (
+              <Link to="/login">Logg ut</Link>
+            )}
           </div>
         </li>
       </ul>
