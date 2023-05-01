@@ -52,6 +52,14 @@ const Login = () => {
         </div>
         <button type="submit">Logg inn!</button>
       </form>
+      <button
+        onClick={() => {
+          localStorage.removeItem("username");
+          localStorage.removeItem("password");
+        }}
+      >
+        Slett localStorage
+      </button>
     </>
   );
 };
