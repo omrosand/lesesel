@@ -13,8 +13,18 @@ import ReadBooks from "./pages/ReadBooks";
 import TestUsers from "./components/TestUsers";
 import ToTopButton from "./components/ToTopButton";
 import NavScoreboard from "./components/NavScoreboard";
+import Login from "./pages/Login";
 
 function App() {
+  const savedUser = () => {
+    const storedUser = localStorage.getItem("username");
+    return storedUser !== null ? storedUser : null;
+  };
+  const savedPass = () => {
+    const storedPass = localStorage.getItem("password");
+    return storedPass !== null ? storedPass : null;
+  };
+
   return (
     <>
       <Nav />
@@ -29,6 +39,7 @@ function App() {
         <Route path="/registrerbok" element={<RegisterBook />} />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <TestUsers />
       <ToTopButton />
