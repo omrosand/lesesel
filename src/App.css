@@ -115,6 +115,9 @@ h1 {
   align-items: center;
   justify-content: space-around;
   background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  border: none;
+  border-radius: 20px;
 }
 
 .card img {
@@ -196,7 +199,11 @@ a {
   flex-direction: row;
   text-align: left;
   background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
   color: black;
+  border-radius: 20px;
+  border: none;
+  padding-bottom: 5px;
 }
 
 article {
@@ -227,6 +234,9 @@ button {
   padding: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
 }
 
 .homeLink {
@@ -239,80 +249,59 @@ button:hover {
   color: white;
 }
 
-/* Settings */
-.settings {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 0 auto;
-}
-
-.settings button {
-  margin-top: 2vh;
-  margin-bottom: 5vh;
-}
-
-/*min profil*/
-.myProfile {
+/*myprofile, faq, settings pageCard*/
+.pageCard {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 2vh;
   text-align: left;
   background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  border: none;
+  border-radius: 20px;
   padding: 4vh;
-}
-.myProfile h2 {
-  margin-top: 2vh;
-  margin-bottom: 3vh;
+  color: black;
 }
 
-.myProfile h3 {
-  margin-top: 2vh;
-}
-.avatar {
+.pageCard img {
   width: 100%;
   max-width: 300px;
   height: auto;
-}
-
-.faq {
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
+}
+
+.pageCard button {
   margin-top: 2vh;
-  text-align: left;
-  background-color: rgba(246, 255, 127, 0.8);
-  padding: 4vh;
+  margin-bottom: 3vh;
+}
+.pageCard h2 {
+  margin-top: 3vh;
 }
 
-.faq h2 {
-  margin-top: 4vh;
-}
-
-.faq h3 {
-  margin-top: 4vh;
+.pageCard h3 {
+  margin-top: 3vh;
 }
 
 /*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
 .topBtn {
   position: fixed;
-  width: 13%;
+  width: fit-content;
   right: 30px;
   bottom: 20px;
-  font-size: 15px;
+  font-size: 14px;
   z-index: 1;
   cursor: pointer;
   color: black;
-  background-color: rgb(0, 231, 89);
-  border: none;
+  background-color: rgb(246, 255, 127);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .topBtn:hover {
   background-color: black;
-  color: rgb(0, 231, 89);
+  color: rgb(246, 255, 127);
 }
 
 /*Nav scoreboard*/

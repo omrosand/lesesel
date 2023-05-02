@@ -15,7 +15,7 @@ const MyProfile = ({user}) => {
   
   return (
     <>
-      <article className="myProfile">
+      <article className="pageCard">
         <Helmet>
           <title>Min profil</title>
         </Helmet>
@@ -32,6 +32,7 @@ const MyProfile = ({user}) => {
             <p>{sumScore()}</p>
 
             <h3>Mine trofeer</h3>
+
           </>
         )}
       </article>

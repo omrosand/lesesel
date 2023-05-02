@@ -12,7 +12,7 @@ const Settings = () => {
         <title>Innstillinger</title>
       </Helmet>
       <h1>Innstillinger</h1>
-      <article className="settings">
+      <article className="pageCard">
         <h2>Bytte språk?</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus

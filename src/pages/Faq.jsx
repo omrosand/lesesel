@@ -9,7 +9,7 @@ const Faq = () => {
       </Helmet>
       <h1>Ofte stilte spørsmål</h1>
 
-      <article className='faq'>
+      <article className='pageCard'>
         <h2>Hva er Lesesel?</h2>
           <p>Svar</p>
 
