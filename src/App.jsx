@@ -10,11 +10,13 @@ import RegisterBook from "./pages/RegisterBook";
 import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
+import RegisterUser from "./pages/RegisterUser";
 import TestUsers from "./components/TestUsers";
 import ToTopButton from "./components/ToTopButton";
 import NavScoreboard from "./components/NavScoreboard";
 import Login from "./pages/Login";
 import { useEffect, useState } from "react";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -40,6 +42,7 @@ function App() {
         <Route path="/registrerbok" element={<RegisterBook />} />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
+        <Route path="/registrer-bruker" element={<RegisterUser />} />
         <Route
           path="/login"
           element={<Login user={user} setUser={setUser} />}
