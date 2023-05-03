@@ -11,14 +11,28 @@ import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
 import TestUsers from "./components/TestUsers";
+import ToTopButton from "./components/ToTopButton";
+import NavScoreboard from "./components/NavScoreboard";
+import Login from "./pages/Login";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const authenticatedUser = localStorage.getItem("user");
+    if (authenticatedUser) {
+      setUser(JSON.parse(authenticatedUser));
+    }
+  }, []);
+
   return (
     <>
-      <Nav />
+      <Nav user={user} />
+      <NavScoreboard user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/minprofil" element={<MyProfile />} />
+        <Route path="/minprofil" element={<MyProfile user={user} />} />
         <Route path="/mineboker" element={<MyBooks />} />
         <Route path="/venner" element={<Friends />} />
         <Route path="/oftestiltesporsmal" element={<Faq />} />
@@ -26,8 +40,13 @@ function App() {
         <Route path="/registrerbok" element={<RegisterBook />} />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
+        <Route
+          path="/login"
+          element={<Login user={user} setUser={setUser} />}
+        />
       </Routes>
       <TestUsers />
+      <ToTopButton />
     </>
   );
 }

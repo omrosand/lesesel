@@ -11,6 +11,7 @@ body {
   background-image: url("./assets/lesesel_dag.webp");
   background-repeat: no-repeat;
   background-color: rgb(127, 251, 255);
+  background-size: cover;
   color: black;
 }
 
@@ -18,6 +19,7 @@ body {
   background-image: url("./assets/lesesel_natt.webp");
   background-repeat: no-repeat;
   background-color: black;
+  background-size: cover;
   color: white;
 }
 
@@ -25,6 +27,10 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin: 1em 0;
+}
+.introText {
+  max-width: 700px;
+  margin: 1em auto 1em;
 }
 /* Navigation */
 
@@ -109,6 +115,9 @@ h1 {
   align-items: center;
   justify-content: space-around;
   background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  border: none;
+  border-radius: 20px;
 }
 
 .card img {
@@ -190,7 +199,11 @@ a {
   flex-direction: row;
   text-align: left;
   background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
   color: black;
+  border-radius: 20px;
+  border: none;
+  padding-bottom: 5px;
 }
 
 article {
@@ -222,6 +235,9 @@ button {
   padding: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
 }
 
 .homeLink {
@@ -234,39 +250,132 @@ button:hover {
   color: white;
 }
 
-/* Settings */
-.settings {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 0 auto;
-}
-
-.settings button {
-  margin-top: 2vh;
-  margin-bottom: 5vh;
-}
-
-/*min profil*/
-.myProfile {
+/*myprofile, faq, settings pageCard*/
+.pageCard {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 2vh;
   text-align: left;
-}
-.myProfile h2 {
-  margin-top: 2vh;
-  margin-bottom: 3vh;
+  background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  border: none;
+  border-radius: 20px;
+  padding: 4vh;
+  color: black;
 }
 
-.myProfile h3 {
-  margin-top: 2vh;
-}
-.avatar {
+.pageCard img {
   width: 100%;
   max-width: 300px;
   height: auto;
+  margin: 0 auto;
 }
 
+.pageCard button {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+.pageCard h2 {
+  margin-top: 3vh;
+}
 
+.pageCard h3 {
+  margin-top: 3vh;
+}
+
+/*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
+.topBtn {
+  position: fixed;
+  width: fit-content;
+  right: 30px;
+  bottom: 20px;
+  font-size: 14px;
+  z-index: 1;
+  cursor: pointer;
+  color: black;
+  background-color: rgb(246, 255, 127);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.topBtn:hover {
+  background-color: black;
+  color: rgb(246, 255, 127);
+}
+
+/*Nav scoreboard*/
+.navScoreboard {
+  width: fit-content;
+  gap: 20px;
+  background-color: rgb(0, 231, 89);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  margin: 0 auto;
+  padding: 2vh;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.75);
+}
+.navScoreboard p {
+  font-weight: 600;
+}
+.navScoreboard p a {
+  text-decoration: underline;
+}
+.imgSection {
+  width: auto;
+}
+
+.imgSection img {
+  width: 3.75rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.username {
+  font-weight: 700;
+}
+
+.trophySection ul {
+  list-style-type: none;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  width: fit-content;
+  margin: 1em auto;
+  padding: 2em;
+  border-radius: 10px;
+}
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+.formWrapper input {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+.loggedIn {
+  background-color: rgba(246, 255, 127, 0.8);
+  width: fit-content;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 20px;
+}
+.loggedIn div img {
+  max-width: 300px;
+}
+.loggedIn div div {
+  margin: 1em 0;
+}

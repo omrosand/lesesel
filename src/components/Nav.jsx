@@ -69,14 +69,9 @@ const navElements = [
     path: "/innstillinger",
     icon: <FaCog />,
   },
-  {
-    title: "Logg ut",
-    path: "/loggut",
-    icon: <HiLogout />,
-  },
 ];
 
-const Nav = () => {
+const Nav = ({ user }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -115,6 +110,16 @@ const Nav = () => {
             )}
           </li>
         ))}
+        <li className="navElement">
+          <div>
+            <HiLogout />
+            {!user ? (
+              <Link to="/login">Logg inn</Link>
+            ) : (
+              <Link to="/login">Logg ut</Link>
+            )}
+          </div>
+        </li>
       </ul>
     </nav>
   );
