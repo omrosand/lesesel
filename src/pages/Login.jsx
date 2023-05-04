@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { client } from "../utils/sanityclient";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+
 
 const Login = ({ setUser, user }) => {
   const [username, setUsername] = useState("");
@@ -77,6 +79,7 @@ const Login = ({ setUser, user }) => {
               />
             </div>
             <button type="submit">Logg inn!</button>
+            <p>Har du ikke bruker? Registrer deg <Link to="/registrer-bruker">her</Link>.</p>
           </form>
         </>
       ) : (
