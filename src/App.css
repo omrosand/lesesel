@@ -11,7 +11,8 @@ body {
   background-image: url("./assets/lesesel_dag.PNG");
   background-repeat: no-repeat;
   background-color: rgb(127, 251, 255);
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100%;
   color: black;
 }
 
@@ -19,7 +20,8 @@ body {
   background-image: url("./assets/lesesel_natt.PNG");
   background-repeat: no-repeat;
   background-color: black;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100%;
   color: white;
 }
 
