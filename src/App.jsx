@@ -17,7 +17,6 @@ import NavScoreboard from "./components/NavScoreboard";
 import Login from "./pages/Login";
 import { useEffect, useState } from "react";
 
-
 function App() {
   const [user, setUser] = useState(null);
 
@@ -39,7 +38,10 @@ function App() {
         <Route path="/venner" element={<Friends />} />
         <Route path="/oftestiltesporsmal" element={<Faq />} />
         <Route path="/innstillinger" element={<Settings />} />
-        <Route path="/registrerbok" element={<RegisterBook />} />
+        <Route
+          path="/registrerbok"
+          element={<RegisterBook user={user} setUser={setUser} />}
+        />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
         <Route path="/registrer-bruker" element={<RegisterUser />} />
