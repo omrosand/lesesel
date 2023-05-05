@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { client } from "../utils/sanityclient";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 
 const Login = ({ setUser, user }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { userId } = useParams();
 
   const handleUsername = (e) => {
     setUsername(e.target.value);
@@ -21,6 +21,7 @@ const Login = ({ setUser, user }) => {
     try {
       const response = await client.fetch(
         `*[_type == "users" && username == "${username}" && password == "${password}"][0]{
+          _id,
         username, 
         avatar {
           asset-> {
@@ -30,11 +31,11 @@ const Login = ({ setUser, user }) => {
         books
       }`
       );
-
+      console.log(response);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response));
-
         setUser(response);
+        console.log(user);
       } else {
         alert("Feil brukernavn eller passord, prøv igjen!");
       }
