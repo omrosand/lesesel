@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { client } from "../utils/sanityclient";
 import { Helmet } from "react-helmet";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 
 const Login = ({ setUser, user }) => {
   const [username, setUsername] = useState("");
