@@ -63,6 +63,9 @@ const SearchBar = ({ user, setUser }) => {
       pages,
     };
     try {
+      if (!user.books) {
+        user.books = [];
+      }
       const updatedUser = await writeClient
         .patch(user._id)
         .set({
