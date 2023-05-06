@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     const authenticatedUser = localStorage.getItem("user");
-    if (authenticatedUser) {
+    if (authenticatedUser && authenticatedUser !== "undefined") {
       setUser(JSON.parse(authenticatedUser));
     }
   }, []);
