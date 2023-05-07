@@ -7,6 +7,7 @@ const Home = () => {
     <>
     <Helmet>
       <title>Velkommen til Lesesel</title>
+      <link rel="icon" href="favicon.ico" />
     </Helmet>
       <h1>Hjem</h1>
       <ul children="homeCardList">
