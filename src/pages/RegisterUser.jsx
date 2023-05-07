@@ -103,7 +103,12 @@ const RegisterUser = () => {
 
         <div>
           {newUser && ( 
-            <p>Brukeren din med brukernavn <b>{newUser.username}</b> er registrert!</p>
+            <div>
+              <p>Brukeren din med brukernavn <b>{newUser.username}</b> er registrert!</p>
+              <p>Logg inn med brukeren din <Link to="/login">her.</Link></p>
+            </div>
+            
+  
           )}
           {error && <p className="errorMessage">{error}</p>}
 
