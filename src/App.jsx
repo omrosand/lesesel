@@ -10,6 +10,7 @@ import RegisterBook from "./pages/RegisterBook";
 import Faq from "./pages/Faq";
 import Favorites from "./pages/Favorites";
 import ReadBooks from "./pages/ReadBooks";
+import RegisterUser from "./pages/RegisterUser";
 import TestUsers from "./components/TestUsers";
 import ToTopButton from "./components/ToTopButton";
 import NavScoreboard from "./components/NavScoreboard";
@@ -21,7 +22,7 @@ function App() {
 
   useEffect(() => {
     const authenticatedUser = localStorage.getItem("user");
-    if (authenticatedUser) {
+    if (authenticatedUser && authenticatedUser !== "undefined") {
       setUser(JSON.parse(authenticatedUser));
     }
   }, []);
@@ -37,9 +38,13 @@ function App() {
         <Route path="/venner" element={<Friends />} />
         <Route path="/oftestiltesporsmal" element={<Faq />} />
         <Route path="/innstillinger" element={<Settings />} />
-        <Route path="/registrerbok" element={<RegisterBook />} />
+        <Route
+          path="/registrerbok"
+          element={<RegisterBook user={user} setUser={setUser} />}
+        />
         <Route path="/lesteboker" element={<ReadBooks />} />
         <Route path="/favoritter" element={<Favorites />} />
+        <Route path="/registrer-bruker" element={<RegisterUser />} />
         <Route
           path="/login"
           element={<Login user={user} setUser={setUser} />}

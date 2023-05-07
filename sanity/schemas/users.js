@@ -29,6 +29,12 @@ export default {
             name: "password",
             title: "Passord",
             type: "string"
+        },
+        {
+            name: "email",
+            title: "Epost",
+            type: "string",
+            validation: Rule => Rule.email()
         }
     ]
 }

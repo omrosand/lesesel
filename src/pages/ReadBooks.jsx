@@ -1,12 +1,11 @@
 import { Helmet } from 'react-helmet';
 
-
 const ReadBooks = () => {
   return (
     <>
-    <Helmet>
-      <title>Leste bøker</title>
-    </Helmet>
+      <Helmet>
+        <title>Leste bøker</title>
+      </Helmet>
       <h1>Leste bøker</h1>
     </>
   );

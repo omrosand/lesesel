@@ -10,8 +10,9 @@
 body {
   background-image: url("./assets/lesesel_dag.webp");
   background-repeat: no-repeat;
-  background-color: rgb(127, 251, 255);
-  background-size: cover;
+  background-color: rgb(120, 251, 255);
+  background-attachment: fixed;
+  background-size: 100%;
   color: black;
 }
 
@@ -19,7 +20,8 @@ body {
   background-image: url("./assets/lesesel_natt.webp");
   background-repeat: no-repeat;
   background-color: black;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100%;
   color: white;
 }
 
@@ -165,12 +167,15 @@ h1 {
   min-width: 250px;
   background-color: rgba(246, 255, 127, 0.8);
   color: black;
+  cursor: pointer;
 }
+
 .results li img {
   max-width: 200px;
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   margin-bottom: 1em;
 }
+
 .title {
   font-size: 1.1rem;
 }
@@ -178,6 +183,103 @@ h1 {
 a {
   text-decoration: none;
   color: black;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  text-align: left;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-content: center;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+.closeButton:hover {
+  background-color: white;
+  color: rgb(117, 0, 0);
+}
+
+.modalContent img {
+  max-width: 90%;
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  margin-bottom: 1em;
+}
+.bookInfo {
+  margin: 1em 0;
+  align-self: self-start;
+}
+.loginReminder {
+  margin-top: 1em;
+  font-weight: 600;
+}
+.loginReminder a {
+  text-decoration: underline;
+}
+.addBookBtn {
+  margin-top: 2.2em;
+}
+.loadingSpinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.bookAddedText {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 2em;
+}
+.check {
+  font-size: 1.5rem;
+  color: rgb(0, 158, 61);
+}
+@media only screen and (max-width: 600px) {
+  .results li {
+    flex-basis: calc(50% - 10px);
+    min-width: 150px;
+  }
+
+  .modalContent {
+    width: 90%;
+  }
 }
 
 /* home page */
@@ -309,13 +411,14 @@ button:hover {
 .navScoreboard {
   width: fit-content;
   gap: 20px;
-  background-color: rgb(0, 231, 89);
+  background-color: rgb(246, 255, 127);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   text-align: left;
   margin: 0 auto;
   padding: 2vh;
+  color: black;
   border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.75);
 }
@@ -353,6 +456,14 @@ button:hover {
   padding: 2em;
   border-radius: 10px;
 }
+.loginForm p {
+  margin-top: 2vh;
+}
+
+.loginForm p a {
+  text-decoration: underline;
+}
+
 .formWrapper {
   display: flex;
   flex-direction: column;
