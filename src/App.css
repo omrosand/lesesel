@@ -469,6 +469,7 @@ button:hover {
   margin: 1em auto;
   padding: 2em;
   border-radius: 10px;
+  color: black;
 }
 .loginForm p {
   margin-top: 2vh;
