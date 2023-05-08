@@ -29,7 +29,11 @@ function App() {
 
   return (
     <>
-      <Nav user={user} />
+      <div className="bannerWrapper">
+        <img className="banner" src="/src/assets/banner2.png" />
+        <Nav user={user} />
+      </div>
+
       <NavScoreboard user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
