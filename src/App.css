@@ -505,3 +505,26 @@ button:hover {
 .loggedIn div div {
   margin: 1em 0;
 }
+/* Trophies */
+.trophies {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+.trophy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  max-width: 150px;
+  border: 2px solid rgba(0, 0, 0, 0.761);
+  border-radius: 20px;
+  padding: 1em;
+  text-align: center;
+}
+.lockedTrophy {
+  filter: grayscale(1);
+}
+.trophyHeader {
+  margin: 1em 0 0.5em;
+}
