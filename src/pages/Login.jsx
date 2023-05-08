@@ -53,11 +53,12 @@ const Login = ({ setUser, user }) => {
       </Helmet>
       {!user ? (
         <>
-          <p className="introText">
-            For å kunne bruke Lesesel må du logge deg inn bla bla bla Donec
-            lacinia auctor ante, a vestibulum purus suscipit eleifend. Sed nec
-            volutpat massa.
-          </p>
+          <h1 className="introText">
+          Velkommen tilbake!
+          </h1>
+          <h2>
+          Logg inn
+          </h2>
           <form onSubmit={handleLogin} className="loginForm">
             <div className="formWrapper">
               <label htmlFor="username">Brukernavn:</label>

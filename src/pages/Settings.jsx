@@ -15,8 +15,7 @@ const Settings = () => {
       <article className="pageCard">
         <h2>Bytte språk?</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus
-          ipsum in pulvinar ultricies.
+          Lesesel er både tilgjenglig på norsk og engelsk. Trykk på knappen under om du ønsker å bytte språk. 
         </p>
         <button>Bytt språk</button>
 

@@ -7,7 +7,7 @@
 
 /* Dark mode toggle */
 body {
-  background-image: url("./assets/lesesel_dag.PNG");
+  background-image: url("./assets/lesesel_dag.webp");
   background-repeat: no-repeat;
   background-color: rgb(120, 251, 255);
   background-attachment: fixed;
@@ -16,7 +16,7 @@ body {
 }
 
 .dark-mode {
-  background-image: url("./assets/lesesel_natt.PNG");
+  background-image: url("./assets/lesesel_natt.webp");
   background-repeat: no-repeat;
   background-color: black;
   background-attachment: fixed;
@@ -335,6 +335,7 @@ article {
   max-width: 18vh;
   height: auto;
   width: 100%;
+  object-fit: contain;
 }
 
 button {

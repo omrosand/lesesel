@@ -9,6 +9,8 @@ const RegisterUser = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [newUser, setNewUser] = useState("");
+  const [showSubmitButton, setShowSubmitButton] = useState(true); 
+  const [error, setError] = useState(null);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -31,14 +33,26 @@ const RegisterUser = () => {
     };
 
     writeClient
-      .create(registerUser)
-      .then((registerUserDocument) => {
-        setNewUser(registerUserDocument);
-      })
-      .catch((error) => {
-        console.log("Creating user failed:", error.message);
-      });
-  };
+    .fetch(`*[_type == "users" && email == "${email}"][0]`)
+    .then((existingUser) => {
+      if (existingUser) {
+        setError("En bruker med denne mailen eksisterer allerede");
+      } else {
+        writeClient
+          .create(registerUser)
+          .then((registerUserDocument) => {
+            setNewUser(registerUserDocument);
+          })
+          .catch((error) => {
+            console.log("Creating user failed:", error.message);
+          });
+      }
+    })
+    .catch((error) => {
+      console.log("Fant ikke den eksisterende brukeren.:", error.message);
+      setError("Fant ikke den eksisterende brukeren.");
+    });
+  }
 
 
   return (
@@ -83,12 +97,21 @@ const RegisterUser = () => {
           />
         </div>
 
-        <button type="submit">Registrer bruker</button>
+        {showSubmitButton && ( 
+          <button type="submit">Registrer bruker</button>
+        )}
 
         <div>
-          <p>
-            Har du allerede en bruker? Logg inn <Link to="/login">her</Link>.
-          </p>
+          {newUser && ( 
+            <p>Brukeren din med brukernavn <b>{newUser.username}</b> er registrert!</p>
+          )}
+          {error && <p className="errorMessage">{error}</p>}
+
+          {!newUser && ( 
+            <p>
+              Har du allerede en bruker? Logg inn <Link to="/login">her</Link>.
+            </p>
+          )}
         </div>
       </form>
     </>
