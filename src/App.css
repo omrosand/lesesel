@@ -41,7 +41,7 @@ h1 {
 }
 .banner {
   padding: 0;
-  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.8));
 }
 
 /* Navigation */
@@ -377,7 +377,7 @@ button:hover {
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   border: none;
   border-radius: 20px;
-  padding: 4vh;
+  padding: 1vh 4vh;
   color: black;
 }
 
@@ -444,6 +444,9 @@ button:hover {
 }
 .imgSection {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .imgSection img {
@@ -455,9 +458,8 @@ button:hover {
 .username {
   font-weight: 700;
 }
-
-.trophySection ul {
-  list-style-type: none;
+.trophyThumbnail {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
 }
 .loginForm {
   display: flex;
@@ -513,6 +515,7 @@ button:hover {
 }
 .trophy {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   gap: 1em;
@@ -522,6 +525,25 @@ button:hover {
   padding: 1em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.689);
+}
+.trophyChosenOverlay {
+  position: absolute;
+  padding: 5px 5px 0 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+}
+
+.trophyChosenText {
+  color: rgb(45, 161, 45);
+  font-size: 2rem;
+}
+.unlockedTrophy {
+  cursor: pointer;
 }
 .lockedTrophy {
   filter: grayscale(1);

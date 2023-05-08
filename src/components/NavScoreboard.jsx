@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import trophies from "../utils/trophies";
 
-const NavScoreboard = ({ user }) => {
+const NavScoreboard = ({ user, trophy }) => {
   const sumScore = () => {
     if (user?.books?.length > 0) {
       let score = 0;
@@ -11,6 +12,16 @@ const NavScoreboard = ({ user }) => {
       });
       return score;
     }
+  };
+  const sumTrophies = () => {
+    let unlockedCount = 0;
+    trophies.map((trophy) => {
+      if (trophy.condition(user) === true) {
+        unlockedCount++;
+      }
+      return unlockedCount;
+    });
+    return unlockedCount;
   };
 
   return (
@@ -24,13 +35,21 @@ const NavScoreboard = ({ user }) => {
           <section>
             <p className="username">{user?.username}</p>
             <p>Poengscore: {sumScore()}</p>
+            <p>Trofeer: {sumTrophies()}</p>
           </section>
 
-          <section className="trophySection">
-            <p>Trofeer:</p>
-            <ul>
-              <li></li>
-            </ul>
+          <section className="imgSection">
+            {trophy === "" ? (
+              <Link to="/minprofil">
+                <button>Velg favoritt trofé</button>
+              </Link>
+            ) : (
+              <img
+                src={trophy}
+                alt="favoritt trofé"
+                className="trophyThumbnail"
+              />
+            )}
           </section>
         </>
       ) : (

@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [trophy, setTrophy] = useState("");
 
   useEffect(() => {
     const authenticatedUser = localStorage.getItem("user");
@@ -30,14 +31,19 @@ function App() {
   return (
     <>
       <div className="bannerWrapper">
-        <img className="banner" src="/src/assets/banner2.png" />
+        <img className="banner" src="/src/assets/banner3.png" />
         <Nav user={user} />
       </div>
 
-      <NavScoreboard user={user} />
+      <NavScoreboard user={user} trophy={trophy} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/minprofil" element={<MyProfile user={user} />} />
+        <Route
+          path="/minprofil"
+          element={
+            <MyProfile user={user} setTrophy={setTrophy} trophy={trophy} />
+          }
+        />
         <Route path="/mineboker" element={<MyBooks />} />
         <Route path="/venner" element={<Friends />} />
         <Route path="/oftestiltesporsmal" element={<Faq />} />
@@ -46,7 +52,7 @@ function App() {
           path="/registrerbok"
           element={<RegisterBook user={user} setUser={setUser} />}
         />
-        <Route path="/lesteboker" element={<ReadBooks />} />
+        <Route path="/lesteboker" element={<ReadBooks user={user} />} />
         <Route path="/favoritter" element={<Favorites />} />
         <Route path="/registrer-bruker" element={<RegisterUser />} />
         <Route
