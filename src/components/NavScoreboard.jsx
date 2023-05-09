@@ -29,11 +29,15 @@ const NavScoreboard = ({ user, trophy }) => {
       {user ? (
         <>
           <section className="imgSection">
-            <img src={user?.avatar?.asset?.url} />
+            <Link to="/minprofil">
+              <img src={user?.avatar?.asset?.url} />
+            </Link>
           </section>
 
           <section>
-            <p className="username">{user?.username}</p>
+            <Link to="/minprofil">
+              <p className="username">{user?.username}</p>
+            </Link>
             <p>Poengscore: {sumScore()}</p>
             <p>Trofeer: {sumTrophies()}</p>
           </section>

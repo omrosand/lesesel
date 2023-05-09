@@ -27,7 +27,7 @@ const MyProfile = ({ user, setTrophy, trophy }) => {
               src={user?.avatar?.asset?.url}
               alt="Avatar"
             />
-            <h2>{user?.username}'s profil</h2>
+            <h2 className="profileTitle">{user?.username}'s profil</h2>
 
             <h3>Min poengscore</h3>
             <p>{sumScore()}</p>

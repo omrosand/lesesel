@@ -1,4 +1,4 @@
-#root {
+.contentWrapper {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
@@ -377,7 +377,7 @@ button:hover {
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   border: none;
   border-radius: 20px;
-  padding: 1vh 4vh;
+  padding: 2vh 4vh;
   color: black;
 }
 
@@ -399,7 +399,10 @@ button:hover {
 .pageCard h3 {
   margin-top: 3vh;
 }
-
+.profileTitle {
+  text-align: center;
+  font-size: 2rem;
+}
 /*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
 .topBtn {
   position: fixed;
@@ -435,6 +438,9 @@ button:hover {
   color: black;
   border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .navScoreboard p {
   font-weight: 600;
@@ -457,6 +463,10 @@ button:hover {
 
 .username {
   font-weight: 700;
+  text-decoration: underline;
+}
+.username:hover {
+  color: #0b6992;
 }
 .trophyThumbnail {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
@@ -500,6 +510,7 @@ button:hover {
   margin: 2em auto;
   padding: 2em;
   border-radius: 20px;
+  color: black;
 }
 .loggedIn div img {
   max-width: 300px;
@@ -550,4 +561,23 @@ button:hover {
 }
 .trophyHeader {
   margin: 1em 0 0.5em;
+}
+/*Footer*/
+.footerWrapper {
+  display: flex;
+  margin-top: 3em;
+  padding: 3em 1em;
+  justify-content: space-around;
+  align-items: center;
+  text-align: start;
+  background-color: #494949;
+  color: white;
+}
+.footerWrapper img {
+  max-width: 250px;
+  height: auto;
+}
+.footerLinks a {
+  color: white;
+  text-decoration: underline;
 }
