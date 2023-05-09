@@ -360,7 +360,8 @@ a {
 article {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1em;
   max-width: 50%;
   margin-left: 70px;
 }
