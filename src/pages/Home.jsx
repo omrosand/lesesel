@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import WeeklyRecommendation from "../components/WeeklyRecommendation";
 
 const Home = () => {
   return (
@@ -29,6 +30,11 @@ const Home = () => {
               </Link>
             </button>
           </article>
+        </li>
+
+        <li className="weeklyRecommendation">
+          <h2 className="weeklyBookTag">Ukens anbefaling</h2>
+          <WeeklyRecommendation />
         </li>
 
         <li className="homeCard">
