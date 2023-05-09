@@ -364,6 +364,7 @@ article {
   gap: 1em;
   max-width: 50%;
   margin-left: 70px;
+  padding: 1em 0;
 }
 
 .homeCard img {
