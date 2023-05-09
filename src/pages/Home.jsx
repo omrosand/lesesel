@@ -66,7 +66,7 @@ const Home = () => {
               i.
             </p>
             <button>
-              <Link to="/scoreboard" className="homeLink">
+              <Link to="/favoritter" className="homeLink">
                 Ønsker å lese
               </Link>
             </button>
