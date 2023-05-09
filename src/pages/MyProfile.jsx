@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
+import Trophy from "../components/Trophy";
 
-const MyProfile = ({user}) => {
+const MyProfile = ({ user, setTrophy, trophy }) => {
   const sumScore = () => {
     if (user?.books?.length > 0) {
       let score = 0;
@@ -12,7 +13,7 @@ const MyProfile = ({user}) => {
       return score;
     }
   };
-  
+
   return (
     <>
       <article className="pageCard">
@@ -32,7 +33,8 @@ const MyProfile = ({user}) => {
             <p>{sumScore()}</p>
 
             <h3>Mine trofeer</h3>
-
+            <p>Trykk på det opplåste troféet du sette som favoritt.</p>
+            <Trophy user={user} setTrophy={setTrophy} trophy={trophy} />
           </>
         )}
       </article>
