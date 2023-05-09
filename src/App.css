@@ -1,4 +1,4 @@
-#root {
+.contentWrapper {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
@@ -321,13 +321,50 @@ a {
   border: none;
   padding-bottom: 5px;
 }
+.weeklyRecommendation {
+  margin: 0 auto;
+  padding: 2em 1em;
+  min-width: 200px;
+  max-width: 850px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 2em;
+  text-align: left;
+  background-color: rgba(246, 255, 127, 0.8);
+  box-shadow: 0px 0px 8px rgb(15, 15, 15);
+  color: black;
+  border-radius: 20px;
+}
+.weeklyBookTag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em 0.5em;
+  border-radius: 20px 0 20px;
+  background-color: #43ff3db6;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  color: black;
+  font-size: 1.2rem;
+}
+.weeklyRecommendation div {
+  max-width: 280px;
+  height: auto;
+}
+
+.weeklyRecommendation img {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
 
 article {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1em;
   max-width: 50%;
   margin-left: 70px;
+  padding: 1em 0;
 }
 
 .homeCard img {
@@ -377,7 +414,7 @@ button:hover {
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   border: none;
   border-radius: 20px;
-  padding: 1vh 4vh;
+  padding: 2vh 4vh;
   color: black;
 }
 
@@ -399,7 +436,10 @@ button:hover {
 .pageCard h3 {
   margin-top: 3vh;
 }
-
+.profileTitle {
+  text-align: center;
+  font-size: 2rem;
+}
 /*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
 .topBtn {
   position: fixed;
@@ -435,6 +475,9 @@ button:hover {
   color: black;
   border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .navScoreboard p {
   font-weight: 600;
@@ -457,6 +500,10 @@ button:hover {
 
 .username {
   font-weight: 700;
+  text-decoration: underline;
+}
+.username:hover {
+  color: #0b6992;
 }
 .trophyThumbnail {
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
@@ -500,6 +547,7 @@ button:hover {
   margin: 2em auto;
   padding: 2em;
   border-radius: 20px;
+  color: black;
 }
 .loggedIn div img {
   max-width: 300px;
@@ -550,4 +598,23 @@ button:hover {
 }
 .trophyHeader {
   margin: 1em 0 0.5em;
+}
+/*Footer*/
+.footerWrapper {
+  display: flex;
+  margin-top: 3em;
+  padding: 3em 1em;
+  justify-content: space-around;
+  align-items: center;
+  text-align: start;
+  background-color: #494949;
+  color: white;
+}
+.footerWrapper img {
+  max-width: 250px;
+  height: auto;
+}
+.footerLinks a {
+  color: white;
+  text-decoration: underline;
 }
