@@ -73,6 +73,7 @@ const navElements = [
 
 const Nav = ({ user }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activePath, setActivePath] = useState(window.location.pathname);
 
   const handleMouseEnter = (index) => {
     setActiveDropdown(index);
@@ -94,7 +95,13 @@ const Nav = ({ user }) => {
           >
             <div>
               {element.icon}
-              <Link to={element.path}>{element.title}</Link>
+              <Link
+                to={element.path}
+                onClick={() => setActivePath(element.path)}
+                className={element.path === activePath ? "active" : ""}
+              >
+                {element.title}
+              </Link>
             </div>
             {element.dropdown && activeDropdown === index && (
               <ul className="dropdown">
@@ -102,7 +109,13 @@ const Nav = ({ user }) => {
                   <li key={item.title}>
                     <div>
                       {item.icon}
-                      <Link to={item.path}>{item.title}</Link>
+                      <Link
+                        to={item.path}
+                        onClick={() => setActivePath(item.path)}
+                        className={item.path === activePath ? "active" : ""}
+                      >
+                        {item.title}
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -114,9 +127,21 @@ const Nav = ({ user }) => {
           <div>
             <HiLogout />
             {!user ? (
-              <Link to="/login">Logg inn</Link>
+              <Link
+                to="/login"
+                onClick={() => setActivePath("/login")}
+                className={"/login" === activePath ? "active" : ""}
+              >
+                Logg inn
+              </Link>
             ) : (
-              <Link to="/login">Logg ut</Link>
+              <Link
+                to="/login"
+                onClick={() => setActivePath("/login")}
+                className={"/login" === activePath ? "active" : ""}
+              >
+                Logg ut
+              </Link>
             )}
           </div>
         </li>
