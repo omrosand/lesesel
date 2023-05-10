@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import trophies from "../utils/trophies";
 
-const NavScoreboard = ({ user, trophy }) => {
+const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
   const sumScore = () => {
     if (user?.books?.length > 0) {
       let score = 0;
@@ -29,13 +29,21 @@ const NavScoreboard = ({ user, trophy }) => {
       {user ? (
         <>
           <section className="imgSection">
-            <Link to="/minprofil">
+            <Link
+              to="/minprofil"
+              onClick={() => setActivePath("/minprofil")}
+              className={"/minprofil" === activePath ? "active" : ""}
+            >
               <img src={user?.avatar?.asset?.url} />
             </Link>
           </section>
 
           <section>
-            <Link to="/minprofil">
+            <Link
+              to="/minprofil"
+              onClick={() => setActivePath("/minprofil")}
+              className={"/minprofil" === activePath ? "active" : ""}
+            >
               <p className="username">{user?.username}</p>
             </Link>
             <p>Poengscore: {sumScore()}</p>

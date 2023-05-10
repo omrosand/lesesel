@@ -70,7 +70,7 @@ h1 {
   position: relative;
 }
 
-.navElement div {
+.navElement a {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -79,8 +79,15 @@ h1 {
   color: rgb(35, 146, 194);
   text-decoration: none;
   cursor: pointer;
+  width: 100%;
 }
-
+.navElement a:hover {
+  background-color: #9bdbf640;
+  border-radius: 10px;
+}
+.navElement a p {
+  color: black;
+}
 .navElement:hover > .dropdown {
   display: block;
 }
@@ -105,18 +112,15 @@ h1 {
 }
 
 .dropdown a {
-  color: black;
+  color: rgb(35, 146, 194);
   text-decoration: none;
-}
-.dropdown a:hover {
-  color: rgb(58, 102, 150);
 }
 .navElement a.active {
   font-weight: 600;
   width: 100%;
   height: 100%;
   background-color: #9bdbf6;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 /* Search */
 .cardList {

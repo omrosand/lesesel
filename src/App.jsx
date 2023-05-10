@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 
 function App() {
+  const [activePath, setActivePath] = useState(window.location.pathname);
   const [user, setUser] = useState(null);
   const [trophy, setTrophy] = useState("");
 
@@ -35,10 +36,19 @@ function App() {
         <div className="bannerWrapper">
           <img className="banner" src="/src/assets/banner3.png" />
 
-          <Nav user={user} />
+          <Nav
+            user={user}
+            activePath={activePath}
+            setActivePath={setActivePath}
+          />
         </div>
 
-        <NavScoreboard user={user} trophy={trophy} />
+        <NavScoreboard
+          user={user}
+          trophy={trophy}
+          activePath={activePath}
+          setActivePath={setActivePath}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

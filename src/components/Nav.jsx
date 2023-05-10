@@ -71,9 +71,8 @@ const navElements = [
   },
 ];
 
-const Nav = ({ user }) => {
+const Nav = ({ user, activePath, setActivePath }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [activePath, setActivePath] = useState(window.location.pathname);
 
   const handleMouseEnter = (index) => {
     setActiveDropdown(index);
@@ -93,30 +92,26 @@ const Nav = ({ user }) => {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <div>
+            <Link
+              to={element.path}
+              onClick={() => setActivePath(element.path)}
+              className={element.path === activePath ? "active" : ""}
+            >
               {element.icon}
-              <Link
-                to={element.path}
-                onClick={() => setActivePath(element.path)}
-                className={element.path === activePath ? "active" : ""}
-              >
-                {element.title}
-              </Link>
-            </div>
+              <p>{element.title}</p>
+            </Link>
             {element.dropdown && activeDropdown === index && (
               <ul className="dropdown">
                 {element.dropdown.map((item) => (
                   <li key={item.title}>
-                    <div>
+                    <Link
+                      to={item.path}
+                      onClick={() => setActivePath(item.path)}
+                      className={item.path === activePath ? "active" : ""}
+                    >
                       {item.icon}
-                      <Link
-                        to={item.path}
-                        onClick={() => setActivePath(item.path)}
-                        className={item.path === activePath ? "active" : ""}
-                      >
-                        {item.title}
-                      </Link>
-                    </div>
+                      <p>{item.title}</p>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -124,26 +119,25 @@ const Nav = ({ user }) => {
           </li>
         ))}
         <li className="navElement">
-          <div>
-            <HiLogout />
-            {!user ? (
-              <Link
-                to="/login"
-                onClick={() => setActivePath("/login")}
-                className={"/login" === activePath ? "active" : ""}
-              >
-                Logg inn
-              </Link>
-            ) : (
-              <Link
-                to="/login"
-                onClick={() => setActivePath("/login")}
-                className={"/login" === activePath ? "active" : ""}
-              >
-                Logg ut
-              </Link>
-            )}
-          </div>
+          {!user ? (
+            <Link
+              to="/login"
+              onClick={() => setActivePath("/login")}
+              className={"/login" === activePath ? "active" : ""}
+            >
+              <HiLogout />
+              <p>Logg inn</p>
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              onClick={() => setActivePath("/login")}
+              className={"/login" === activePath ? "active" : ""}
+            >
+              <HiLogout />
+              <p>Logg ut</p>
+            </Link>
+          )}
         </li>
       </ul>
     </nav>
