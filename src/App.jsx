@@ -34,6 +34,7 @@ function App() {
       <div className="contentWrapper">
         <div className="bannerWrapper">
           <img className="banner" src="/src/assets/banner3.png" />
+
           <Nav user={user} />
         </div>
 
