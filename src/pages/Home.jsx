@@ -56,7 +56,7 @@ const Home = () => {
         <li className="homeCard">
           <img src="/src/img/Sel6.webp" alt="sel med sjokkert ansikt" />
           <article>
-            <h2>Ønsker å lese</h2>
+            <h2>Favoritter</h2>
             <p>
               Har du funnet en bok du ønsker å lese, men du kan ikke begynne på
               den akkurat nå? Hva med å lagre bøkene i en liste, slik at når du
@@ -67,7 +67,7 @@ const Home = () => {
             </p>
             <button>
               <Link to="/favoritter" className="homeLink">
-                Ønsker å lese
+                Favoritter
               </Link>
             </button>
           </article>
