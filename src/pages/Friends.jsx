@@ -1,17 +1,14 @@
-import { Helmet } from 'react-helmet';
-
+import { Helmet } from "react-helmet";
 
 const Friends = () => {
   return (
     <>
-    <Helmet>
-      <title>Mine venner</title>
-    </Helmet>
-
-    <article className='pageCard'>
-      <h1>Venner</h1>
-    </article>
-      
+      <Helmet>
+        <title>Mine venner</title>
+      </Helmet>
+      <article className="pageCard">
+        <h1>Venner</h1>
+      </article>
     </>
   );
 };

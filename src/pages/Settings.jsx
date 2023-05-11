@@ -11,12 +11,12 @@ const Settings = () => {
       <Helmet>
         <title>Innstillinger</title>
       </Helmet>
-      
       <article className="pageCard">
         <h1>Innstillinger</h1>
         <h2>Bytte språk?</h2>
         <p>
-          Lesesel er både tilgjenglig på norsk og engelsk. Trykk på knappen under om du ønsker å bytte språk. 
+          Lesesel er både tilgjenglig på norsk og engelsk. Trykk på knappen
+          under om du ønsker å bytte språk.
         </p>
         <button>Bytt språk</button>
 
