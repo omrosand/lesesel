@@ -30,7 +30,7 @@ const Faq = () => {
 
         <section>
           <h3>Har du andre spørsmål? </h3>
-          <p>Kontakt oss: <a href="epost@eksempel.no">epost@eksempel.no</a></p>
+          <p>Kontakt oss: <a href="epost@eksempel.no">kontakt@lesesel.no</a></p>
         </section>
       </article>
     </>

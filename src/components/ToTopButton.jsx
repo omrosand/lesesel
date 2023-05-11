@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ToTopButton = () => {
   //https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
@@ -8,21 +8,28 @@ const ToTopButton = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
       setVisible(true);
-    } else if (scrolled <= 300) {
+    } else {
       setVisible(false);
     }
   };
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-  window.addEventListener("scroll", toggleVisible);
+  
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+    return () => {
+      window.removeEventListener("scroll", toggleVisible);
+    };
+  }, []);
 
   return (
     <>
-      <button className="topBtn" onClick={scrollToTop}>
+      <button className="topBtn" onClick={scrollToTop} style={{ display: visible ? 'block' : 'none' }}>
         Til toppen
       </button>
     </>
