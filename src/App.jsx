@@ -71,7 +71,9 @@ function App() {
           <Route path="/registrer-bruker" element={<RegisterUser />} />
           <Route
             path="/login"
-            element={<Login user={user} setUser={setUser} />}
+            element={
+              <Login user={user} setUser={setUser} setTrophy={setTrophy} />
+            }
           />
         </Routes>
       </div>
