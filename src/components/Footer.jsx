@@ -23,7 +23,7 @@ const Footer = () => {
         <img src="/src/img/Sel4.webp" />
       </div>
       <p className="footerDesignBy">
-        Design elementer by pch.vector on Freepik
+        Design elementer hentet fra pch.vector på Freepik
       </p>
     </div>
   );
