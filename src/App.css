@@ -485,7 +485,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   text-align: left;
-  margin: 0 auto;
+  margin: 0 auto 5vh auto;
   padding: 2vh;
   color: black;
   border-radius: 0 0 20px 20px;
