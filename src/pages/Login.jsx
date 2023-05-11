@@ -53,10 +53,6 @@ const Login = ({ setUser, user }) => {
       </Helmet>
       {!user ? (
         <>
-          <h1 className="introText">
-          Velkommen tilbake!
-          </h1>
-          
           <form onSubmit={handleLogin} className="loginForm">
             <h2>Logg inn</h2>
             <div className="formWrapper">
