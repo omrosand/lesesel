@@ -17,6 +17,8 @@ import NavScoreboard from "./components/NavScoreboard";
 import Login from "./pages/Login";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import Scoreboard from "./pages/Scoreboard";
+
 
 function App() {
   const [activePath, setActivePath] = useState(window.location.pathname);
@@ -59,6 +61,7 @@ function App() {
           />
           <Route path="/mineboker" element={<MyBooks />} />
           <Route path="/venner" element={<Friends />} />
+          <Route path="/scoreboard" element={<Scoreboard />}/>
           <Route path="/oftestiltesporsmal" element={<Faq />} />
           <Route path="/innstillinger" element={<Settings />} />
           <Route

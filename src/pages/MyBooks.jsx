@@ -25,7 +25,8 @@ const MyBooks = () => {
           </li>
           <li className="card">
             <img src="../src/img/Sel6.webp" alt="sel med sjokkert ansikt" />
-            <button>Ønsker å lese</button>
+            
+            <button><Link to="/favoritter">Favoritter</Link></button>
           </li>
         </ul>
       </section>
