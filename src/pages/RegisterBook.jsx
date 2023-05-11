@@ -7,7 +7,6 @@ const RegisterBook = ({ user, setUser }) => {
       <Helmet>
         <title>Registrer bøker</title>
       </Helmet>
-      <h1>Hvilken bok har du lest?</h1>
       <section className="searchContainer">
         <SearchBar user={user} setUser={setUser} />
       </section>

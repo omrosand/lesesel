@@ -155,18 +155,21 @@ h1 {
 }
 
 .searchField {
-  padding: 10px;
-  border: none;
+  padding: 12px;
+  border: 1px solid black;
+  color: black;
   margin-bottom: 5px;
-  font-size: 17px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  background-color: white;
+  margin-right: 1em;
 }
 
 .searchButton {
   padding: 10px;
   border: none;
-  margin-left: 5px;
   margin-bottom: 5px;
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .results {
@@ -199,6 +202,8 @@ h1 {
 }
 .resultsH3 {
   margin-bottom: 2em;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 .title {
   font-size: 1.1rem;
@@ -625,14 +630,20 @@ button:hover {
   margin: 1em 0 0.5em;
 }
 /*Footer*/
+.footerBg {
+  background-color: #494949;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .footerWrapper {
   display: flex;
   margin-top: 3em;
   padding: 3em 1em;
   justify-content: space-around;
+  gap: 2em;
   align-items: center;
   text-align: start;
-  background-color: #494949;
   color: white;
 }
 .footerWrapper img {
@@ -642,4 +653,8 @@ button:hover {
 .footerLinks a {
   color: white;
   text-decoration: underline;
+}
+.footerDesignBy {
+  color: white;
+  font-size: 0.8rem;
 }
