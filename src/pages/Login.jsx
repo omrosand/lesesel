@@ -56,10 +56,9 @@ const Login = ({ setUser, user }) => {
           <h1 className="introText">
           Velkommen tilbake!
           </h1>
-          <h2>
-          Logg inn
-          </h2>
+          
           <form onSubmit={handleLogin} className="loginForm">
+            <h2>Logg inn</h2>
             <div className="formWrapper">
               <label htmlFor="username">Brukernavn:</label>
               <input

@@ -61,8 +61,9 @@ const RegisterUser = () => {
         <title>Registrer bruker</title>
       </Helmet>
 
-      <h1>Registrer bruker</h1>
+      
       <form onSubmit={handleRegisterUser} className="loginForm">
+        <h2>Registrer bruker</h2>
         <div className="formWrapper">
           <label htmlFor="email">E-post:</label>
           <input

@@ -27,7 +27,8 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin: 1em 0;
+  margin: 2vh 0 2vh 0;
+  text-align: center;
 }
 .introText {
   max-width: 700px;
@@ -128,6 +129,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 25px;
+  margin-top: 5vh;
 }
 .card {
   border: 3px solid rgb(116, 116, 116);
@@ -320,7 +322,6 @@ a {
   justify-content: center;
   padding: 0 2em;
   gap: 25px;
-  margin-top: 5vh;
 }
 
 .homeCard {
@@ -477,8 +478,8 @@ button:hover {
 }
 
 .topBtn:hover {
-  background-color: black;
-  color: rgb(246, 255, 127);
+  background-color: rgb(116, 116, 116);
+  color: white;
 }
 
 /*Nav scoreboard*/
@@ -498,6 +499,7 @@ button:hover {
   position: sticky;
   top: 0;
   z-index: 1;
+  margin-bottom: 5vh;
 }
 .navScoreboard p {
   font-weight: 600;
@@ -550,6 +552,11 @@ button:hover {
   border-radius: 10px;
   color: black;
 }
+
+.loginForm h2 {
+  margin: 0.5vh 0 3vh 0;
+}
+
 .loginForm p {
   margin-top: 2vh;
 }
