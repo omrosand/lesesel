@@ -7,8 +7,6 @@ const MyBooks = () => {
       <Helmet>
         <title>Mine bøker</title>
       </Helmet>
-
-      <h1>Mine Bøker</h1>
       <section>
         <ul className="cardList">
           <li className="card">
@@ -25,8 +23,10 @@ const MyBooks = () => {
           </li>
           <li className="card">
             <img src="../src/img/Sel6.webp" alt="sel med sjokkert ansikt" />
-            
-            <button><Link to="/favoritter">Favoritter</Link></button>
+
+            <button>
+              <Link to="/favoritter">Favoritter</Link>
+            </button>
           </li>
         </ul>
       </section>
