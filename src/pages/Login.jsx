@@ -3,7 +3,7 @@ import { client } from "../utils/sanityclient";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 
-const Login = ({ setUser, user }) => {
+const Login = ({ setUser, user, setTrophy }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { userId } = useParams();
@@ -53,13 +53,8 @@ const Login = ({ setUser, user }) => {
       </Helmet>
       {!user ? (
         <>
-          <h1 className="introText">
-          Velkommen tilbake!
-          </h1>
-          <h2>
-          Logg inn
-          </h2>
           <form onSubmit={handleLogin} className="loginForm">
+            <h2>Logg inn</h2>
             <div className="formWrapper">
               <label htmlFor="username">Brukernavn:</label>
               <input
@@ -102,6 +97,7 @@ const Login = ({ setUser, user }) => {
               setUser(null);
               setUsername("");
               setPassword("");
+              setTrophy("");
             }}
           >
             Logg ut!

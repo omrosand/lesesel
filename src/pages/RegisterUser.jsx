@@ -61,8 +61,9 @@ const RegisterUser = () => {
         <title>Registrer bruker</title>
       </Helmet>
 
-      <h1>Registrer bruker</h1>
+      
       <form onSubmit={handleRegisterUser} className="loginForm">
+        <h2>Registrer bruker</h2>
         <div className="formWrapper">
           <label htmlFor="email">E-post:</label>
           <input
@@ -95,6 +96,15 @@ const RegisterUser = () => {
             name="password"
             required
           />
+        </div>
+
+        <div className="checkbox">
+          <input type="checkbox" id="alder" required/>
+          <label htmlFor="alder">Jeg er over 18.</label>
+        </div>
+        <div className="checkbox">
+          <input type="checkbox" id="gdpr" required/>
+          <label htmlFor="gdpr">Jeg godkjenner <Link to="/oftestiltesporsmal">vilkår</Link>.</label>
         </div>
 
         {showSubmitButton && ( 
