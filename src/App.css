@@ -569,6 +569,10 @@ button:hover {
 
 .loginForm button {
   margin: 0 auto;
+  color: black;
+}
+.loginForm button:hover {
+  color: white;
 }
 
 .loginForm p a {
@@ -603,11 +607,18 @@ button:hover {
 
 .loggedIn {
   background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   width: fit-content;
   margin: 2em auto;
   padding: 2em;
   border-radius: 20px;
   color: black;
+}
+.loggedIn button {
+  color: black;
+}
+.loggedIn button:hover {
+  color: white;
 }
 .loggedIn div img {
   max-width: 300px;
