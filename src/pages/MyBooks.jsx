@@ -8,7 +8,6 @@ const MyBooks = () => {
         <title>Mine bøker</title>
       </Helmet>
 
-      <h1>Mine Bøker</h1>
       <section>
         <ul className="cardList">
           <li className="card">

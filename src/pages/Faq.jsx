@@ -7,9 +7,9 @@ const Faq = () => {
       <Helmet>
         <title>Ofte stilte spørsmål</title>
       </Helmet>
-      <h1>Ofte stilte spørsmål</h1>
-
+      
       <article className='pageCard'>
+        <h1>Ofte stilte spørsmål</h1>
         <h2>Hva er Lesesel?</h2>
           <p>Lesesel er en herårlig lesekampanje som skal hjelpe barn og unge med å skape, styrke og opprettholde motivsjonen for lesing. </p>
 

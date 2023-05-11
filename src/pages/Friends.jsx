@@ -7,7 +7,11 @@ const Friends = () => {
     <Helmet>
       <title>Mine venner</title>
     </Helmet>
+
+    <article className='pageCard'>
       <h1>Venner</h1>
+    </article>
+      
     </>
   );
 };

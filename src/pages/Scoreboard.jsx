@@ -6,7 +6,10 @@ const Scoreboard = () => {
             <Helmet>
                 <title>Scoreboard</title>
             </Helmet>
-            <h1>Scoreboard</h1>
+            <article className="pageCard">
+                <h1>Scoreboard</h1>
+            </article>
+            
         </>   
     )
 }

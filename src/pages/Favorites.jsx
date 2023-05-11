@@ -7,7 +7,10 @@ const Favorites = () => {
     <Helmet>
       <title>Mine favoritter</title>
     </Helmet>
-      <h1>Favoritter</h1>
+      <article className='pageCard'>
+        <h1>Favoritter</h1>
+      </article>
+      
     </>
   );
 };

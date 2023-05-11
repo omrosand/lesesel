@@ -6,8 +6,8 @@ const ReadBooks = ({ user }) => {
       <Helmet>
         <title>Leste bøker</title>
       </Helmet>
-      <h1>Leste bøker</h1>
       <article className="pageCard">
+        <h1>Leste bøker</h1>
         <h2>Bokhistorikk:</h2>
         <ol>
           {user?.books?.reverse().map((book) => (

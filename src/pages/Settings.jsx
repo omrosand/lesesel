@@ -11,8 +11,9 @@ const Settings = () => {
       <Helmet>
         <title>Innstillinger</title>
       </Helmet>
-      <h1>Innstillinger</h1>
+      
       <article className="pageCard">
+        <h1>Innstillinger</h1>
         <h2>Bytte språk?</h2>
         <p>
           Lesesel er både tilgjenglig på norsk og engelsk. Trykk på knappen under om du ønsker å bytte språk. 
