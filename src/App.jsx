@@ -61,7 +61,7 @@ function App() {
           <Route path="/venner" element={<Friends />} />
           <Route path="/scoreboard" element={<Scoreboard />} />
           <Route path="/oftestiltesporsmal" element={<Faq />} />
-          <Route path="/innstillinger" element={<Settings />} />
+          <Route path="/innstillinger" element={<Settings user={user} setUser={setUser} />} />
           <Route
             path="/registrerbok"
             element={<RegisterBook user={user} setUser={setUser} />}
