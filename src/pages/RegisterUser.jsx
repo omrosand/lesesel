@@ -98,6 +98,15 @@ const RegisterUser = () => {
           />
         </div>
 
+        <div className="checkbox">
+          <input type="checkbox" id="alder" required/>
+          <label htmlFor="alder">Jeg er over 18.</label>
+        </div>
+        <div className="checkbox">
+          <input type="checkbox" id="gdpr" required/>
+          <label htmlFor="gdpr">Jeg godkjenner vilkår.</label>
+        </div>
+
         {showSubmitButton && ( 
           <button type="submit">Registrer bruker</button>
         )}
