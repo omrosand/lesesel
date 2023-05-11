@@ -53,7 +53,7 @@ h1 {
   flex-wrap: wrap;
   background-color: whitesmoke;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  z-index: 998;
 }
 
 .mainNav ul {
@@ -70,7 +70,7 @@ h1 {
   position: relative;
 }
 
-.navElement div {
+.navElement a {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -79,8 +79,15 @@ h1 {
   color: rgb(35, 146, 194);
   text-decoration: none;
   cursor: pointer;
+  width: 100%;
 }
-
+.navElement a:hover {
+  background-color: #9bdbf640;
+  border-radius: 10px;
+}
+.navElement a p {
+  color: black;
+}
 .navElement:hover > .dropdown {
   display: block;
 }
@@ -105,11 +112,15 @@ h1 {
 }
 
 .dropdown a {
-  color: black;
+  color: rgb(35, 146, 194);
   text-decoration: none;
 }
-.dropdown a:hover {
-  color: rgb(58, 102, 150);
+.navElement a.active {
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  background-color: #9bdbf6;
+  border-radius: 10px;
 }
 /* Search */
 .cardList {
@@ -186,7 +197,9 @@ h1 {
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   margin-bottom: 1em;
 }
-
+.resultsH3 {
+  margin-bottom: 2em;
+}
 .title {
   font-size: 1.1rem;
 }
@@ -198,7 +211,7 @@ a {
 
 .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -263,6 +276,7 @@ a {
 }
 .loadingSpinner {
   animation: spin 1s linear infinite;
+  font-size: 1.5rem;
 }
 @keyframes spin {
   0% {

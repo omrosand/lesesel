@@ -12,9 +12,11 @@ const SearchBar = ({ user, setUser }) => {
   const [total, setTotal] = useState();
   const [selectedBook, setSelectedBook] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [addBookLoading, setAddBookLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
   const fetchData = (value) => {
+    setLoading(true);
     fetch(
       `https://bibliografisk.bs.no/v1/publications?query=${value}&filter=type%3A(audiobook%20OR%20book)&limit=80`
     )
@@ -22,6 +24,11 @@ const SearchBar = ({ user, setUser }) => {
       .then((data) => {
         setResult(data.records);
         setTotal(data.total);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
       });
   };
 
@@ -91,7 +98,7 @@ const SearchBar = ({ user, setUser }) => {
         setUser(response);
       }
       console.log("User updated:", updatedUser);
-      setLoading(false);
+      setAddBookLoading(false);
       setCompleted(true);
     } catch (error) {
       console.error("Error updating user:", error);
@@ -115,26 +122,33 @@ const SearchBar = ({ user, setUser }) => {
           Søk
         </button>
       </form>
-      <h3>{total} treff på søk:</h3>
-      <ul className="results">
-        {result.map((book) => (
-          <li key={book.id} onClick={() => openModal(book)}>
-            <img
-              src={
-                book.image
-                  ? book.image.thumbnailUrl
-                  : "/src/assets/placeholder.jpg"
-              }
-              alt="placeholder"
-            />
-            <h2 className="title">{book.name}</h2>
-            <p>
-              {getType(book["@type"]).toUpperCase()}
-              {book.audience[0] ? " | " + book.audience[0].name : null}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <h3 className="resultsH3">{total} treff på søk:</h3>
+      {loading ? (
+        <>
+          <h4>Henter bøker...</h4>
+          <ImSpinner className="loadingSpinner" />
+        </>
+      ) : (
+        <ul className="results">
+          {result.map((book) => (
+            <li key={book.id} onClick={() => openModal(book)}>
+              <img
+                src={
+                  book.image
+                    ? book.image.thumbnailUrl
+                    : "/src/assets/placeholder.jpg"
+                }
+                alt="placeholder"
+              />
+              <h2 className="title">{book.name}</h2>
+              <p>
+                {getType(book["@type"]).toUpperCase()}
+                {book.audience[0] ? " | " + book.audience[0].name : null}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
       {selectedBook && (
         <div className="modal" onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
@@ -180,12 +194,12 @@ const SearchBar = ({ user, setUser }) => {
                 <button
                   className="addBookBtn"
                   onClick={() => {
-                    setLoading(true);
+                    setAddBookLoading(true);
                     addBook(selectedBook);
                   }}
                   disabled={loading}
                 >
-                  {loading ? (
+                  {addBookLoading ? (
                     <ImSpinner className="loadingSpinner" />
                   ) : (
                     "Jeg har lest!"
