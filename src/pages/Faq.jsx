@@ -28,14 +28,20 @@ const Faq = () => {
         <h2>Hva er avatarer? </h2>
         <p>
           Avatarer er bilder som kan brukes som profilbilde for å representere
-          hvem du er.{" "}
+          hvem du er.
         </p>
 
         <h2>Hva er trofeer? </h2>
         <p>
           Trofeer er belønninger som man tjener etter man har fullført visse
-          milepæler.{" "}
+          milepæler.
         </p>
+
+        <h2>Informasjon om personvern hos Lesesel:</h2>
+        <p>Vi i Lesesel tar ditt personvern på alvor. Når vi ber om opplysninger fra deg, brukes de kun for at du skal kunne lage deg en profil, og gjøre aktiviteter med denne profilen, som å lagre bøker eller tjene poeng og troféer.</p>
+        <p>Vi sporer ikke trafikken din. Informasjonskapslene som lages ved din interaksjon med Lesesel lagres lokalt på din enhet. </p>
+        <p>Ingen identifiserende personopplysninger er synlige for andre på din profil, og vi anbefaler ikke å bruke fulle navn i brukernavnet man lager.</p>
+        <p>Hvis du har spørsmål om informasjonskapsler generelt, eller lurer på hvordan du kan justere informasjonskapsler i din nettleser anbefaler vi <a href="https://nettvett.no/slik-administrer-du-informasjonskapsler/ ">Nettvett</a> sine nettsider.</p>
 
         <section>
           <h3>Har du andre spørsmål? </h3>

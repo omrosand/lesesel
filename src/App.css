@@ -405,6 +405,7 @@ button {
   align-items: center;
   border: 2px solid rgb(116, 116, 116);
   background-color: rgba(246, 255, 127);
+  color: black;
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 500;
@@ -471,6 +472,11 @@ button:hover {
   text-align: center;
   font-size: 2rem;
 }
+
+.pageCard a {
+  text-decoration: underline;
+}
+
 /*Til toppen - https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/*/
 .topBtn {
   position: fixed;

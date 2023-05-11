@@ -104,7 +104,7 @@ const RegisterUser = () => {
         </div>
         <div className="checkbox">
           <input type="checkbox" id="gdpr" required/>
-          <label htmlFor="gdpr">Jeg godkjenner vilkår.</label>
+          <label htmlFor="gdpr">Jeg godkjenner <Link to="/oftestiltesporsmal">vilkår</Link>.</label>
         </div>
 
         {showSubmitButton && ( 
