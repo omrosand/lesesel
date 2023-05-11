@@ -453,7 +453,13 @@ button:hover {
 .pageCard button {
   margin-top: 2vh;
   margin-bottom: 3vh;
+  color: black;
 }
+
+.pageCard button:hover {
+  color: white;
+}
+
 .pageCard h2 {
   margin-top: 3vh;
 }
