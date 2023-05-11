@@ -9,7 +9,6 @@ const Home = () => {
         <title>Velkommen til Lesesel</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
-      <h1>Hjem</h1>
       <ul className="homeCardList">
         <li className="homeCard">
           <img src="/src/img/Sel11.webp" alt="sel med bok" />
