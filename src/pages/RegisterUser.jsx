@@ -100,7 +100,7 @@ const RegisterUser = () => {
 
         <div className="checkbox">
           <input type="checkbox" id="alder" required/>
-          <label htmlFor="alder">Jeg er over 18.</label>
+          <label htmlFor="alder">Jeg er over 18 år.</label>
         </div>
         <div className="checkbox">
           <input type="checkbox" id="gdpr" required/>
