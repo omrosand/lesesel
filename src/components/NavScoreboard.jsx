@@ -46,8 +46,18 @@ const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
             >
               <p className="username">{user?.username}</p>
             </Link>
-            <p>Poengscore: {sumScore()}</p>
-            <p>Trofeer: {sumTrophies()}</p>
+            <table className="navScoreTable">
+              <tbody>
+                <tr>
+                  <th>Poengscore:</th>
+                  <td>{sumScore()}</td>
+                </tr>
+                <tr>
+                  <th>Trofeer:</th>
+                  <td>{sumTrophies()}</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section className="imgSection">
