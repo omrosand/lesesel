@@ -10,7 +10,7 @@ const Scoreboard = () => {
       <article className="pageCard">
         <h1>Scoreboard</h1>
         <p>
-          <Link to="venner">Legg til venner her</Link> for å sammenligne din
+          <Link to="/venner">Legg til venner her</Link> for å sammenligne din
           score med andre venner på scoreboard.
         </p>
       </article>
