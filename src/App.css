@@ -448,8 +448,8 @@ button {
 }
 
 button:hover {
-  background-color: rgb(116, 116, 116);
-  color: rgb(255, 255, 255);
+  background-color: white;
+  color: black;
 }
 
 /*myprofile, faq, settings pageCard*/
@@ -479,10 +479,6 @@ button:hover {
   margin-top: 2vh;
   margin-bottom: 3vh;
   color: black;
-}
-
-.pageCard button:hover {
-  color: white;
 }
 
 .pageCard h2 {
@@ -515,11 +511,6 @@ button:hover {
   box-shadow: 0px 0px 8px rgb(15, 15, 15);
   padding: 10px;
   border-radius: 10px;
-}
-
-.topBtn:hover {
-  background-color: rgb(116, 116, 116);
-  color: white;
 }
 
 /*Nav scoreboard*/
@@ -566,8 +557,8 @@ button:hover {
 }
 
 .imgSection a button:hover {
-  color: white;
-  background-color: rgb(116, 116, 116);
+  color: black;
+  background-color: rgb(246, 255, 127);
 }
 
 .username {
@@ -604,9 +595,6 @@ button:hover {
 .loginForm button {
   margin: 0 auto;
   color: black;
-}
-.loginForm button:hover {
-  color: white;
 }
 
 .loginForm p a {
@@ -651,9 +639,7 @@ button:hover {
 .loggedIn button {
   color: black;
 }
-.loggedIn button:hover {
-  color: white;
-}
+
 .loggedIn div img {
   max-width: 300px;
 }
@@ -737,7 +723,7 @@ button:hover {
   text-decoration: underline;
 }
 .footerDesignBy {
-  color: black;
+  color: white;
   font-size: 0.8rem;
   margin-top: 1em;
 }

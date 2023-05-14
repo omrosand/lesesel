@@ -32,10 +32,9 @@ function App() {
 
   return (
     <>
-      <div className="contentWrapper">
+      <div className="contentWrapper" >
         <div className="bannerWrapper">
-          <img className="banner" src="/src/assets/banner3.png" />
-
+          <img className="banner" src="/src/assets/banner3.png"  alt="Lesesel logo, hvor lesesel teksten er dekket i snø. Til høyre for teksten er det en sel."/>
           <Nav
             user={user}
             activePath={activePath}
@@ -49,33 +48,38 @@ function App() {
           activePath={activePath}
           setActivePath={setActivePath}
         />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/minprofil"
-            element={
-              <MyProfile user={user} setTrophy={setTrophy} trophy={trophy} />
-            }
-          />
-          <Route path="/mineboker" element={<MyBooks />} />
-          <Route path="/venner" element={<Friends />} />
-          <Route path="/scoreboard" element={<Scoreboard />} />
-          <Route path="/oftestiltesporsmal" element={<Faq />} />
-          <Route path="/innstillinger" element={<Settings user={user} setUser={setUser} />} />
-          <Route
-            path="/registrerbok"
-            element={<RegisterBook user={user} setUser={setUser} />}
-          />
-          <Route path="/lesteboker" element={<ReadBooks user={user} />} />
-          <Route path="/favoritter" element={<Favorites />} />
-          <Route path="/registrer-bruker" element={<RegisterUser />} />
-          <Route
-            path="/login"
-            element={
-              <Login user={user} setUser={setUser} setTrophy={setTrophy} />
-            }
-          />
-        </Routes>
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/minprofil"
+              element={
+                <MyProfile user={user} setTrophy={setTrophy} trophy={trophy} />
+              }
+            />
+            <Route path="/mineboker" element={<MyBooks />} />
+            <Route path="/venner" element={<Friends />} />
+            <Route path="/scoreboard" element={<Scoreboard />} />
+            <Route path="/oftestiltesporsmal" element={<Faq />} />
+            <Route
+              path="/innstillinger"
+              element={<Settings user={user} setUser={setUser} />}
+            />
+            <Route
+              path="/registrerbok"
+              element={<RegisterBook user={user} setUser={setUser} />}
+            />
+            <Route path="/lesteboker" element={<ReadBooks user={user} />} />
+            <Route path="/favoritter" element={<Favorites />} />
+            <Route path="/registrer-bruker" element={<RegisterUser />} />
+            <Route
+              path="/login"
+              element={
+                <Login user={user} setUser={setUser} setTrophy={setTrophy} />
+              }
+            />
+          </Routes>
+        </main>
       </div>
       <ToTopButton />
       <Footer />

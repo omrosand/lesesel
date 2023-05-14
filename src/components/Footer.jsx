@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="footerBg">
       <div className="footerWrapper">
-        <img src="/src/img/Sel1.webp" />
+        <img src="/src/img/Sel1.webp" alt=""/>
         <section className="footerContact">
           <h5>Kontakt oss:</h5>
           <p>Telefon: 94972998</p>
@@ -20,7 +20,7 @@ const Footer = () => {
             <p>Innstillinger</p>
           </Link>
         </section>
-        <img src="/src/img/Sel4.webp" />
+        <img src="/src/img/Sel4.webp" alt="" />
       </div>
       <p className="footerApi">
         &#9889; API powered by{" "}

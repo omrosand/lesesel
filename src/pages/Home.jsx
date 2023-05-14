@@ -11,16 +11,15 @@ const Home = () => {
       </Helmet>
       <ul className="homeCardList">
         <li className="homeCard">
-          <img src="/src/img/Sel11.webp" alt="sel med bok" />
+          <img src="/src/img/Sel11.webp" alt="sel med briller som holder bok" />
           <article>
             <h2>Velkommen til Lesesel!</h2>
             <p>
-              Er du glad i å lese? Da har du kommet til det rette stedet! Hos
-              Lesesel kan du tjene poeng ved å lese bøker eller høre på
+              Hos Lesesel kan du tjene poeng ved å lese bøker eller høre på
               lydbøker, dele hva du leser og konkurrere med venner!
             </p>
             <p>
-              Start reisen med Lesesel ved å registrere din først bok ved å
+              Start reisen med Lesesel ved å registrere din første bok ved å
               trykke på knappen under!
             </p>
             <button>
@@ -57,12 +56,9 @@ const Home = () => {
           <article>
             <h2>Favoritter</h2>
             <p>
-              Har du funnet en bok du ønsker å lese, men du kan ikke begynne på
-              den akkurat nå? Hva med å lagre bøkene i en liste, slik at når du
-              er klar, kan du bare gå inn på listen å se hvilke bøker du har
-              lagret. <br />
-              På den måten glemmer du ikke hvilke bøker du har vært interessert
-              i.
+              Har du funnet en bok du liker? Da kan du legge den til i en 
+              liste med dine favoritter. Trykk på knappen under for å se hvilke 
+              bøker du har favorisert. 
             </p>
             <button>
               <Link to="/favoritter" className="homeLink">
