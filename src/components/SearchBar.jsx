@@ -111,6 +111,7 @@ const SearchBar = ({ user, setUser }) => {
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           className="searchField"
+          type="text"
           placeholder="Søk på tittel, forfatter, ISBN..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
