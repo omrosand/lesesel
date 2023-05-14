@@ -770,4 +770,8 @@ button:hover {
     flex-direction: column;
     padding: 1em;
   }
+  .footerWrapper {
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }
