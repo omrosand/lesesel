@@ -67,7 +67,7 @@ const RegisterUser = () => {
         <div className="formWrapper">
           <label htmlFor="email">E-post:</label>
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={handleEmail}
             name="email"
@@ -79,6 +79,7 @@ const RegisterUser = () => {
         <div className="formWrapper">
           <label htmlFor="username">Brukernavn:</label>
           <input
+            id="username"
             type="text"
             value={username}
             onChange={handleUsername}
@@ -90,6 +91,7 @@ const RegisterUser = () => {
         <div className="formWrapper">
           <label htmlFor="password">Passord:</label>
           <input
+            id="password"
             type="password"
             value={password}
             onChange={handlePassword}
@@ -99,12 +101,10 @@ const RegisterUser = () => {
         </div>
 
         <div className="checkbox">
-          <input type="checkbox" id="alder" required/>
-          <label htmlFor="alder">Jeg er over 18.</label>
+          <label htmlFor="alder"><input type="checkbox" id="alder" required/>Jeg er over 18 år.</label>
         </div>
         <div className="checkbox">
-          <input type="checkbox" id="gdpr" required/>
-          <label htmlFor="gdpr">Jeg godkjenner <Link to="/oftestiltesporsmal">vilkår</Link>.</label>
+          <label htmlFor="gdpr"><input type="checkbox" id="gdpr" required/>Jeg godkjenner <Link to="/oftestiltesporsmal">vilkår</Link>.</label>
         </div>
 
         {showSubmitButton && ( 
