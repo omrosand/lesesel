@@ -22,6 +22,10 @@ const Footer = () => {
         </section>
         <img src="/src/img/Sel4.webp" />
       </div>
+      <p className="footerApi">
+        &#9889; API powered by{" "}
+        <a href="https://bibliografisk.bs.no/#/">BIBBI</a>.
+      </p>
       <p className="footerDesignBy">
         Design elementer hentet fra pch.vector på Freepik
       </p>
