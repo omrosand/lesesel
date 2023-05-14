@@ -37,6 +37,7 @@ const SearchBar = ({ user, setUser }) => {
   };
 
   const handleClick = (value) => {
+    if (input === "") return;
     fetchData(value);
   };
 
