@@ -204,7 +204,7 @@ h1 {
   cursor: pointer;
 }
 .results li:hover {
-  background-color: rgb(255, 255, 230);
+  background-color: rgb(215, 247, 255);
 }
 
 .results li img {
@@ -312,6 +312,9 @@ a {
 .loadingSpinner {
   animation: spin 1s linear infinite;
   font-size: 1.5rem;
+}
+.checkbox label a {
+  text-decoration: underline;
 }
 @keyframes spin {
   0% {
