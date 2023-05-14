@@ -740,3 +740,47 @@ button:hover {
   font-size: 0.8rem;
   margin-top: 1em;
 }
+@media screen and (max-width: 1024px) {
+  body {
+    background-size: cover;
+  }
+
+  .dark-mode {
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pageCard {
+    padding: 1em;
+    max-width: none;
+  }
+  .homeCard {
+    flex-direction: column;
+    align-items: center;
+  }
+  .homeCard article {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 90%;
+  }
+  .navScoreboard {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
+  .navScoreboard article {
+    max-width: 90%;
+  }
+  .weeklyRecommendation {
+    flex-direction: column;
+    align-items: center;
+  }
+  .weeklyRecommendation article {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .cardList {
+    flex-direction: column;
+    padding: 1em;
+  }
+}
