@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import MyProfile from "./pages/MyProfile";
@@ -32,15 +32,19 @@ function App() {
 
   return (
     <>
-      <div className="contentWrapper" >
-        <div className="bannerWrapper">
-          <img className="banner" src="/src/assets/banner3.png"  alt="Lesesel logo, hvor lesesel teksten er dekket i snø. Til høyre for teksten er det en sel."/>
+      <div className="contentWrapper">
+        <Link to="/" className="bannerWrapper">
+          <img
+            className="banner"
+            src="/src/assets/banner3.png"
+            alt="Lesesel logo, hvor lesesel teksten er dekket i snø. Til høyre for teksten er det en sel."
+          />
           <Nav
             user={user}
             activePath={activePath}
             setActivePath={setActivePath}
           />
-        </div>
+        </Link>
 
         <NavScoreboard
           user={user}
