@@ -33,9 +33,13 @@ function App() {
   return (
     <>
       <div className="contentWrapper">
-        <Link to="/" className="bannerWrapper">
+        <Link
+          to="/"
+          className={`bannerWrapper ${"/" === activePath ? "active" : ""}`}
+        >
           <img
             className="banner"
+            onClick={() => setActivePath("/")}
             src="/src/assets/banner3.png"
             alt="Lesesel logo, hvor lesesel teksten er dekket i snø. Til høyre for teksten er det en sel."
           />
