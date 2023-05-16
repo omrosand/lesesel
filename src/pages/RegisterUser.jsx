@@ -38,7 +38,7 @@ const RegisterUser = () => {
     };
 
     writeClient
-      .fetch(`*[_type == "users" && email == "${email}"][0]`)
+      .fetch(`*[_type == "users" && email == "${email}"]`)
       .then((existingUser) => {
         if (existingUser) {
           setError("En bruker med denne mailen eksisterer allerede");

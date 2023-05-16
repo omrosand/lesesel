@@ -14,12 +14,6 @@ export default {
             title: "Avatar"
         },
         {
-            name: "invites",
-            title: "Invitasjoner",
-            type: "array",
-            of: [{type: 'invites'}]
-        },
-        {
             name: "books",
             title: "Bøker",
             type: "array",

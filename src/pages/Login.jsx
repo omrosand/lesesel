@@ -20,7 +20,7 @@ const Login = ({ setUser, user, setTrophy }) => {
 
     try {
       const response = await client.fetch(
-        `*[_type == "users" && username == "${username}" && password == "${password}"][0]{
+        `*[_type == "users" && username == "${username}" && password == "${password}"]{
           _id,
         username, 
         avatar {
