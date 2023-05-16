@@ -66,7 +66,16 @@ function App() {
               }
             />
             <Route path="/mineboker" element={<MyBooks />} />
-            <Route path="/venner" element={<Friends user={user} />} />
+            <Route
+              path="/venner"
+              element={
+                <Friends
+                  user={user}
+                  activePath={activePath}
+                  setActivePath={setActivePath}
+                />
+              }
+            />
             <Route path="/scoreboard" element={<Scoreboard />} />
             <Route path="/oftestiltesporsmal" element={<Faq />} />
             <Route
