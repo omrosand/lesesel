@@ -44,6 +44,7 @@ h1 {
   padding: 0;
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.8));
   margin-top: 2vh;
+  z-index: 1;
 }
 
 /* Navigation */
@@ -55,7 +56,7 @@ h1 {
   flex-wrap: wrap;
   background-color: whitesmoke;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 998;
+  z-index: 999;
 }
 
 .mainNav ul {
@@ -100,7 +101,7 @@ h1 {
   left: 0;
   display: none;
   min-width: 160px;
-  z-index: 1;
+  z-index: 999;
   padding: 5px 0;
   margin: 0;
   background-color: whitesmoke;
@@ -816,4 +817,68 @@ button:hover {
     flex-direction: column;
     margin: 0 auto;
   }
+}
+/*Friendcard*/
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0 auto;
+}
+.friendCard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  width: 165px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: start;
+  padding: 1em;
+}
+.friendCard h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 900;
+  align-self: center;
+}
+.friendCard img {
+  margin: 1em auto 0.5em;
+  max-width: 100px;
+  height: auto;
+}
+.friendBooksRead {
+  font-size: 0.9rem;
+}
+.pendingFriend {
+  display: flex;
+  margin-bottom: 0.5em;
+  padding: 0.3em 1em;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: #eaf0ff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(50, 50, 50, 0.8);
+}
+.pendingFriend section {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+.pendingFriend section img {
+  max-width: 50px;
+}
+.accept {
+  background-color: rgb(72, 218, 133);
+  font-size: 0.8rem;
+  box-shadow: none;
+  border: 2px solid rgb(50, 50, 50, 0.8);
+}
+.deny {
+  background-color: rgb(218, 72, 72);
+  font-size: 0.8rem;
+  box-shadow: none;
+  border: 2px solid rgba(50, 50, 50, 0.8);
 }
