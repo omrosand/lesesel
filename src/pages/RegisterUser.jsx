@@ -25,6 +25,13 @@ const RegisterUser = () => {
     e.preventDefault();
     const registerUser = {
       _type: "users",
+      avatar: {
+        _type: "image",
+        asset: {
+          _ref: "image-2b465ae80c4526149c97813ecf0a88cc7a17d346-598x516-webp",
+          _type: "reference"
+        }
+      },
       username: username,
       password: password,
       email: email,
