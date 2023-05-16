@@ -44,6 +44,7 @@ h1 {
   padding: 0;
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.8));
   margin-top: 2vh;
+  z-index: 1;
 }
 
 /* Navigation */
@@ -55,7 +56,7 @@ h1 {
   flex-wrap: wrap;
   background-color: whitesmoke;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 998;
+  z-index: 999;
 }
 
 .mainNav ul {
@@ -100,7 +101,7 @@ h1 {
   left: 0;
   display: none;
   min-width: 160px;
-  z-index: 1;
+  z-index: 999;
   padding: 5px 0;
   margin: 0;
   background-color: whitesmoke;

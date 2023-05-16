@@ -1,28 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { client } from "../utils/sanityclient";
 
 const Friends = ({ user }) => {
-  const [friends, setFriends] = useState();
+  const [friends, setFriends] = useState([]);
 
-  const ole = "4af45169-af7e-4fd4-abe5-1018e191d6aa";
+  const testId = "4af45169-af7e-4fd4-abe5-1018e191d6aa";
 
-  const handleClick = async () => {
-    try {
-      if (user) {
-        const query = `*[_type == "friendship" && "${ole}" == inviter._ref || "${ole}" == invitee._ref]{
+  useEffect(() => {
+    const fetchFriendships = async () => {
+      try {
+        const query = `*[_type == "friendship" && (inviter._ref == "${user._id}" || invitee._ref == "${user._id}")]{
           _id,
           inviter._ref,
           invitee._ref,
           accepted,
         }`;
-        const result = await client.fetch(query);
+        const result = await client.fetch(query, userId);
         console.log(result);
+        setFriends(result);
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    };
+    fetchFriendships();
+  }, [user]);
 
   return (
     <>
@@ -32,7 +34,14 @@ const Friends = ({ user }) => {
 
       <article className="pageCard">
         <h1>Venner</h1>
-        <button onClick={handleClick}>test</button>
+        <button
+          onClick={() => {
+            console.log(user);
+          }}
+        >
+          test
+        </button>
+        <ul>{JSON.stringify(friends)}</ul>
       </article>
     </>
   );

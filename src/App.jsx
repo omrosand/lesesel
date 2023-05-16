@@ -43,12 +43,12 @@ function App() {
             src="/src/assets/banner3.png"
             alt="Lesesel logo, hvor lesesel teksten er dekket i snø. Til høyre for teksten er det en sel."
           />
-          <Nav
-            user={user}
-            activePath={activePath}
-            setActivePath={setActivePath}
-          />
         </Link>
+        <Nav
+          user={user}
+          activePath={activePath}
+          setActivePath={setActivePath}
+        />
 
         <NavScoreboard
           user={user}
