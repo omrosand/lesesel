@@ -20,6 +20,12 @@ export default {
             of: [{type: 'books'}]
         },
         {
+            name: "favoriteBooks",
+            title: "Favorittbøker",
+            type: "array",
+            of: [{type: "favoriteBooks"}]
+        },
+        {
             name: "password",
             title: "Passord",
             type: "string"

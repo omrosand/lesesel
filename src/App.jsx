@@ -56,7 +56,7 @@ function App() {
           activePath={activePath}
           setActivePath={setActivePath}
         />
-        <main id="main-content">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -78,7 +78,7 @@ function App() {
               element={<RegisterBook user={user} setUser={setUser} />}
             />
             <Route path="/lesteboker" element={<ReadBooks user={user} />} />
-            <Route path="/favoritter" element={<Favorites />} />
+            <Route path="/favoritter" element={<Favorites user={user}/>} />
             <Route path="/registrer-bruker" element={<RegisterUser />} />
             <Route
               path="/login"

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { ImSpinner } from "react-icons/im";
-import { AiOutlineCheckCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { client } from "../utils/sanityclient";
 import { writeClient } from "../utils/sanityclient";
@@ -14,6 +13,7 @@ const SearchBar = ({ user, setUser }) => {
   const [loading, setLoading] = useState(false);
   const [addBookLoading, setAddBookLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   const fetchData = (value) => {
     setLoading(true);
@@ -48,7 +48,6 @@ const SearchBar = ({ user, setUser }) => {
 
   const openModal = (book) => {
     setSelectedBook(book);
-    console.log(book);
   };
 
   const closeModal = () => {
@@ -61,8 +60,6 @@ const SearchBar = ({ user, setUser }) => {
     if (selectedBook.numberOfPages) {
       pages = selectedBook?.numberOfPages.toString();
     }
-
-    console.log(user);
 
     const newBook = {
       _key: Date.now().toString(),
@@ -104,6 +101,54 @@ const SearchBar = ({ user, setUser }) => {
     } catch (error) {
       console.error("Error updating user:", error);
     }
+  };
+
+//Favoritter  
+  const addFavorite = async (selectedBook) => {
+    const { name, image } = selectedBook;
+    const newFavorite = {
+      _key: Date.now().toString(),
+      _type: "favoriteBooks",
+      title: name,
+      image
+    };
+
+    try {
+      if (!user.favoriteBooks) {
+        user.favoriteBooks = [];
+      }
+      const updatedUser = await writeClient
+        .patch(user._id)
+        .set({
+          favoriteBooks: [...user.favoriteBooks, newFavorite],
+        })
+        .commit();
+
+      const response = await client.fetch(
+        `*[_type == "users" && _id == "${user._id}"][0]{
+          _id,
+          username, 
+          avatar {
+            asset-> {
+              url
+            }
+          },
+          books,
+          favoriteBooks
+        }`
+      );
+
+      if (response) {
+        localStorage.setItem("user", JSON.stringify(response));
+        setUser(response);
+      }
+      setFavoriteBooks([...favoriteBooks, newFavorite]);
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
+  const isBookInFavorites = (book) => {
+    return favoriteBooks.some((favBook) => favBook.title === book.name);
   };
 
   return (
@@ -193,6 +238,7 @@ const SearchBar = ({ user, setUser }) => {
             <p>{selectedBook.description}</p>
             {user ? (
               !completed && (
+                <section className="modalButtons">
                 <button
                   className="addBookBtn"
                   onClick={() => {
@@ -206,8 +252,19 @@ const SearchBar = ({ user, setUser }) => {
                   ) : (
                     "Jeg har lest!"
                   )}
-                </button>
-              )
+                </button> 
+                <button
+                    className="addBookBtn"
+                    onClick={() => addFavorite(selectedBook)}
+                    disabled={loading}
+                  > 
+                    {addBookLoading ? (
+                      <ImSpinner className="loadingSpinner" />
+                    ) : (
+                      " Legg til favoritt"
+                    )}
+                  </button>
+              </section>)
             ) : (
               <p className="loginReminder">
                 Logg inn <Link to="/login">her</Link> for å legge til bøker!
