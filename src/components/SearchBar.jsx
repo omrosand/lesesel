@@ -112,7 +112,7 @@ const SearchBar = ({ user, setUser }) => {
         <input
           className="searchField"
           type="text"
-          placeholder="Søk på tittel, forfatter, ISBN..."
+          placeholder="Søk på tittel, forfatter, isbn..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
