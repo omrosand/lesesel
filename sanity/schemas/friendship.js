@@ -17,7 +17,7 @@ export default {
     },
     {
       name: 'accepted',
-      type: 'boolean',
+      type: 'number',
       title: 'Akseptert',
     },
   ],
