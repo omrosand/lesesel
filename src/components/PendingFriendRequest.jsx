@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
-import { client } from "../utils/sanityclient";
+import { writeClient } from "../utils/sanityclient";
 
-const PendingFriendRequest = ({ user, friendships }) => {
+const PendingFriendRequest = ({
+  user,
+  friendships,
+  setFriendshipStatus,
+  fetchFriendships,
+}) => {
   const [pendingList, setPendingList] = useState([]);
 
   useEffect(() => {
@@ -14,7 +19,7 @@ const PendingFriendRequest = ({ user, friendships }) => {
           );
 
         const friendRequests = requesterIds.map((requesterId) =>
-          client.fetch(
+          writeClient.fetch(
             `*[_type == "users" && _id == "${requesterId}"]{
               _id,
               username,
@@ -36,12 +41,53 @@ const PendingFriendRequest = ({ user, friendships }) => {
     if (friendships.length > 0) {
       fetchFriendRequests();
     }
-  }, []);
+  }, [friendships]);
 
-  //TODO: Lag en query som sjekker opp mot sanity etter friendship med requesterId og user._id -> Så oppdater det friendship objektet
-  const handleClick = (approveStatus, requesterId) => {
-    console.log(requesterId);
-    console.log(approveStatus);
+  const handleClick = async (approveStatus, requesterId) => {
+    try {
+      const friendship = friendships.find(
+        (friendship) =>
+          friendship.inviter._id === requesterId &&
+          friendship.invitee._id === user._id
+      );
+
+      if (!friendship) {
+        console.log("Friendship not found");
+        return;
+      }
+
+      await writeClient
+        .patch(friendship._id)
+        .set({ accepted: approveStatus })
+        .commit();
+
+      const updatedFriendship = await writeClient.fetch(
+        `*[_type == "friendship" && _id == "${friendship._id}"]{
+        _id,
+        inviter,
+        invitee,
+        accepted
+      }`
+      );
+
+      console.log(
+        `Venneforespørsel ${
+          approveStatus === 2 ? "godkjent" : "avslått"
+        } for ID: ${requesterId}`
+      );
+
+      const updatedFriendshipStatus = friendships.map((friendship) =>
+        friendship._id === updatedFriendship[0]._id
+          ? updatedFriendship[0]
+          : friendship
+      );
+      setFriendshipStatus(updatedFriendshipStatus);
+      if (approveStatus === 2) {
+        fetchFriendships();
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
