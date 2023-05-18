@@ -360,7 +360,7 @@ a {
 
 .homeCard {
   border: 3px solid rgb(116, 116, 116);
-  min-width: 200px;
+  width: 100%;
   max-width: 850px;
   min-height: 250px;
   padding-top: 10px;
@@ -379,7 +379,7 @@ a {
 .weeklyRecommendation {
   margin: 0 auto;
   padding: 2em 1em;
-  min-width: 200px;
+  width: 100%;
   max-width: 850px;
   display: flex;
   position: relative;
