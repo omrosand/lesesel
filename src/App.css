@@ -796,7 +796,7 @@ button:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   width: 165px;
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: start;
   padding: 1em;
 }
