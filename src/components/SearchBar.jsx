@@ -54,6 +54,8 @@ const SearchBar = ({ user, setUser }) => {
     setSelectedBook(null);
     setCompleted(false);
   };
+
+  //Legge til bok i mine bøker
   const addBook = async (selectedBook) => {
     const title = selectedBook?.name;
     let pages = "50";
@@ -112,7 +114,7 @@ const SearchBar = ({ user, setUser }) => {
       title: name,
       image
     };
-
+    
     try {
       if (!user.favoriteBooks) {
         user.favoriteBooks = [];
@@ -143,6 +145,9 @@ const SearchBar = ({ user, setUser }) => {
         setUser(response);
       }
       setFavoriteBooks([...favoriteBooks, newFavorite]);
+
+      setAddBookLoading(false);
+      setCompleted(true);
     } catch (error) {
       console.error("Error updating user:", error);
     }
@@ -255,13 +260,16 @@ const SearchBar = ({ user, setUser }) => {
                 </button> 
                 <button
                     className="addBookBtn"
-                    onClick={() => addFavorite(selectedBook)}
+                    onClick={() => {
+                      setAddBookLoading(true);
+                      addFavorite(selectedBook);
+                    }}
                     disabled={loading}
                   > 
                     {addBookLoading ? (
                       <ImSpinner className="loadingSpinner" />
                     ) : (
-                      " Legg til favoritt"
+                      "Legg til favoritt"
                     )}
                   </button>
               </section>)
