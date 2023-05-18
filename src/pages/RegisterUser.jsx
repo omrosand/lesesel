@@ -87,6 +87,7 @@ const RegisterUser = () => {
             value={username}
             onChange={handleUsername}
             name="username"
+            maxLength={12}
             required
           />
         </div>

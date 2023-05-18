@@ -162,6 +162,8 @@ h1 {
 
 .searchField {
   padding: 10px;
+  width: 100%;
+  max-width: 500px;
   border: none;
   padding: 12px;
   border: 1px solid black;
@@ -832,7 +834,7 @@ button:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   width: 165px;
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: start;
   padding: 1em;
 }
@@ -880,4 +882,17 @@ button:hover {
   font-size: 0.8rem;
   box-shadow: none;
   border: 2px solid rgba(50, 50, 50, 0.8);
+}
+.friendForm {
+  display: flex;
+  align-items: center;
+}
+.friendAddLoadingSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.friendsCard h2 {
+  margin: 0;
 }

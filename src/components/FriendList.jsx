@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { client } from "../utils/sanityclient";
 
-const FriendList = ({ friendships, user }) => {
-  const [friends, setFriends] = useState([]);
-
+const FriendList = ({ friendships, user, friends, setFriends }) => {
   const sumScore = (friendId) => {
     if (friendId.books?.length > 0) {
       let score = 0;
@@ -64,10 +62,15 @@ const FriendList = ({ friendships, user }) => {
               src={friend.avatar?.asset?.url}
               alt={`avatar for ${friend.username}`}
             />
-            <p className="friendBooksRead">
-              Har lest {friend.books?.length} bøker!
-            </p>
-            <p>Score: {sumScore(friend)}</p>
+
+            {friend.books?.length > 0 ? (
+              <p className="friendBooksRead">
+                Har lest {friend.books?.length} bøker!
+              </p>
+            ) : (
+              <p className="friendBooksRead">Skal snart lese sin første bok!</p>
+            )}
+            {sumScore(friend) > 0 ? <p>Score: {sumScore(friend)}</p> : null}
           </li>
         ))
       )}

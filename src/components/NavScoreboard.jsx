@@ -64,7 +64,11 @@ const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
 
           <section className="imgSection">
             {trophy === "" ? (
-              <Link to="/minprofil">
+              <Link
+                to="/minprofil"
+                onClick={() => setActivePath("/minprofil")}
+                className={"/minprofil" === activePath ? "active" : ""}
+              >
                 <button>Velg favoritt trofé</button>
               </Link>
             ) : (
