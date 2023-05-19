@@ -15,7 +15,7 @@ const Favorites = ({ user }) => {
           }`
         );
         if (response) {
-          setFavoriteBooks(response.favoriteBooks || []);
+          setFavoriteBooks(response.favoriteBooks);
         }
       } catch (error) {
         console.error("Error fetching favorites:", error);
@@ -35,13 +35,13 @@ const Favorites = ({ user }) => {
       <article className="pageCard">
         <h1>Favoritter</h1>
         {favoriteBooks.length > 0 ? (
-          <ul className="favoriteBooks">
+          <ol>
             {favoriteBooks.map((book) => (
               <li key={book._key}>
                 <p>{book.title}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         ) : (
           <p>
             Du har ikke lagt til noen favoritter enda. Gå til{" "}
