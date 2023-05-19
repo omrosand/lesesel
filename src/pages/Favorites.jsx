@@ -38,14 +38,6 @@ const Favorites = ({ user }) => {
           <ul className="favoriteBooks">
             {favoriteBooks.map((book) => (
               <li key={book._key}>
-                <img
-                  src={
-                    book.image
-                      ? book.image.thumbnailUrl
-                      : "/src/assets/placeholder.jpg"
-                  }
-                  alt="Bokens omslag"
-                />
                 <p>{book.title}</p>
               </li>
             ))}

@@ -104,16 +104,15 @@ const SearchBar = ({ user, setUser }) => {
     }
   };
 
-//Favoritter  
+  //Favoritter
   const addFavorite = async (selectedBook) => {
     const { name, image } = selectedBook;
     const newFavorite = {
       _key: Date.now().toString(),
       _type: "favoriteBooks",
       title: name,
-      image
     };
-    
+
     try {
       if (!user.favoriteBooks) {
         user.favoriteBooks = [];
@@ -243,35 +242,36 @@ const SearchBar = ({ user, setUser }) => {
             {user ? (
               !completed && (
                 <section className="modalButtons">
-                <button
-                  className="addBookBtn"
-                  onClick={() => {
-                    setAddBookLoading(true);
-                    addBook(selectedBook);
-                  }}
-                  disabled={loading}
-                >
-                  {addBookLoading ? (
-                    <ImSpinner className="loadingSpinner" />
-                  ) : (
-                    "Jeg har lest!"
-                  )}
-                </button> 
-                <button
+                  <button
+                    className="addBookBtn"
+                    onClick={() => {
+                      setAddBookLoading(true);
+                      addBook(selectedBook);
+                    }}
+                    disabled={loading}
+                  >
+                    {addBookLoading ? (
+                      <ImSpinner className="loadingSpinner" />
+                    ) : (
+                      "Jeg har lest!"
+                    )}
+                  </button>
+                  <button
                     className="addBookBtn"
                     onClick={() => {
                       setAddBookLoading(true);
                       addFavorite(selectedBook);
                     }}
                     disabled={loading}
-                  > 
+                  >
                     {addBookLoading ? (
                       <ImSpinner className="loadingSpinner" />
                     ) : (
                       "Legg til favoritt"
                     )}
                   </button>
-              </section>)
+                </section>
+              )
             ) : (
               <p className="loginReminder">
                 Logg inn <Link to="/login">her</Link> for å legge til bøker!
