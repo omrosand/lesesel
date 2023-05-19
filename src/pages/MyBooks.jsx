@@ -10,13 +10,13 @@ const MyBooks = () => {
       <section>
         <ul className="cardList">
           <li className="card">
-            <img src="../src/img/Sel11.webp" alt="sel med bok" />
+            <img src="../src/img/Sel11.webp" alt="sel med briller som holder bok" />
             <button>
               <Link to="/registrerbok">Registrer bok</Link>
             </button>
           </li>
           <li className="card">
-            <img src="../src/img/Sel12.webp" alt="sel som blunker" />
+            <img src="../src/img/Sel12.webp" alt="sel som blunker og strekker ut armene" />
             <button>
               <Link to="/lesteboker">Leste bøker</Link>
             </button>

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineCheckCircle } from "react-icons/ai";
 import { ImSpinner } from "react-icons/im";
-import { AiOutlineCheckCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { client } from "../utils/sanityclient";
 import { writeClient } from "../utils/sanityclient";
@@ -14,6 +13,7 @@ const SearchBar = ({ user, setUser }) => {
   const [loading, setLoading] = useState(false);
   const [addBookLoading, setAddBookLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   const fetchData = (value) => {
     setLoading(true);
@@ -37,6 +37,7 @@ const SearchBar = ({ user, setUser }) => {
   };
 
   const handleClick = (value) => {
+    if (input === "") return;
     fetchData(value);
   };
 
@@ -47,21 +48,20 @@ const SearchBar = ({ user, setUser }) => {
 
   const openModal = (book) => {
     setSelectedBook(book);
-    console.log(book);
   };
 
   const closeModal = () => {
     setSelectedBook(null);
     setCompleted(false);
   };
+
+  //Legge til bok i mine bøker
   const addBook = async (selectedBook) => {
     const title = selectedBook?.name;
     let pages = "50";
     if (selectedBook.numberOfPages) {
       pages = selectedBook?.numberOfPages.toString();
     }
-
-    console.log(user);
 
     const newBook = {
       _key: Date.now().toString(),
@@ -92,7 +92,6 @@ const SearchBar = ({ user, setUser }) => {
         books
       }`
       );
-      console.log(response);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response));
         setUser(response);
@@ -105,12 +104,59 @@ const SearchBar = ({ user, setUser }) => {
     }
   };
 
+  //Favoritter
+  const addFavorite = async (selectedBook) => {
+    const { name } = selectedBook;
+    const newFavorite = {
+      _key: Date.now().toString(),
+      _type: "favoriteBooks",
+      title: name,
+    };
+
+    try {
+      if (!user.favoriteBooks) {
+        user.favoriteBooks = [];
+      }
+      const updatedUser = await writeClient
+        .patch(user._id)
+        .set({
+          favoriteBooks: [...user.favoriteBooks, newFavorite],
+        })
+        .commit();
+
+      const response = await client.fetch(
+        `*[_type == "users" && _id == "${user._id}"][0]{
+          _id,
+          username, 
+          avatar {
+            asset-> {
+              url
+            }
+          },
+          books,
+          favoriteBooks
+        }`
+      );
+
+      if (response) {
+        localStorage.setItem("user", JSON.stringify(response));
+        setUser(response);
+      }
+
+      setAddBookLoading(false);
+      setCompleted(true);
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
+
   return (
     <div className="inputWrapper">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           className="searchField"
-          placeholder="Søk på tittel, forfatter, ISBN..."
+          type="text"
+          placeholder="Søk på tittel, forfatter, isbn..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
@@ -191,20 +237,36 @@ const SearchBar = ({ user, setUser }) => {
             <p>{selectedBook.description}</p>
             {user ? (
               !completed && (
-                <button
-                  className="addBookBtn"
-                  onClick={() => {
-                    setAddBookLoading(true);
-                    addBook(selectedBook);
-                  }}
-                  disabled={loading}
-                >
-                  {addBookLoading ? (
-                    <ImSpinner className="loadingSpinner" />
-                  ) : (
-                    "Jeg har lest!"
-                  )}
-                </button>
+                <section className="modalButtons">
+                  <button
+                    className="addBookBtn"
+                    onClick={() => {
+                      setAddBookLoading(true);
+                      addBook(selectedBook);
+                    }}
+                    disabled={loading}
+                  >
+                    {addBookLoading ? (
+                      <ImSpinner className="loadingSpinner" />
+                    ) : (
+                      "Jeg har lest!"
+                    )}
+                  </button>
+                  <button
+                    className="addBookBtn"
+                    onClick={() => {
+                      setAddBookLoading(true);
+                      addFavorite(selectedBook);
+                    }}
+                    disabled={loading}
+                  >
+                    {addBookLoading ? (
+                      <ImSpinner className="loadingSpinner" />
+                    ) : (
+                      "Legg til favoritt"
+                    )}
+                  </button>
+                </section>
               )
             ) : (
               <p className="loginReminder">
