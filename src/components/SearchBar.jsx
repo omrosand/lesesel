@@ -106,7 +106,7 @@ const SearchBar = ({ user, setUser }) => {
 
   //Favoritter
   const addFavorite = async (selectedBook) => {
-    const { name, image } = selectedBook;
+    const { name } = selectedBook;
     const newFavorite = {
       _key: Date.now().toString(),
       _type: "favoriteBooks",
@@ -142,16 +142,12 @@ const SearchBar = ({ user, setUser }) => {
         localStorage.setItem("user", JSON.stringify(response));
         setUser(response);
       }
-      setFavoriteBooks([...favoriteBooks, newFavorite]);
 
       setAddBookLoading(false);
       setCompleted(true);
     } catch (error) {
       console.error("Error updating user:", error);
     }
-  };
-  const isBookInFavorites = (book) => {
-    return favoriteBooks.some((favBook) => favBook.title === book.name);
   };
 
   return (

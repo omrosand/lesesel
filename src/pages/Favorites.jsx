@@ -15,7 +15,7 @@ const Favorites = ({ user }) => {
           }`
         );
         if (response) {
-          setFavoriteBooks(response.favoriteBooks || []);
+          setFavoriteBooks(response.favoriteBooks);
         }
       } catch (error) {
         console.error("Error fetching favorites:", error);
