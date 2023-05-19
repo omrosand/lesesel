@@ -291,21 +291,6 @@ a {
   text-align: left;
 }
 
-/*Favoritter*/
-.favoriteBooks {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style-type: none;
-  gap: 1rem;
-}
-
-.favoriteBooks li {
-  width: 31%;
-  box-shadow: 0px 0px 8px rgb(15, 15, 15);
-  padding: 30px;
-}
-
 .modalButtons {
   display: flex;
   flex-direction: row;
