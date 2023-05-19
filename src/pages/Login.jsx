@@ -31,19 +31,15 @@ const Login = ({ setUser, user, setTrophy }) => {
         books
       }`
       );
-      console.log(response);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response));
         setUser(response);
-        console.log(user);
       } else {
         alert("Feil brukernavn eller passord, prøv igjen!");
       }
     } catch (error) {
       console.error(error);
     }
-
-    console.log(username, password);
   };
 
   return (
@@ -53,11 +49,12 @@ const Login = ({ setUser, user, setTrophy }) => {
       </Helmet>
       {!user ? (
         <>
-          <form onSubmit={handleLogin} className="loginForm">
+          <form onSubmit={handleLogin} className="loginForm" >
             <h2>Logg inn</h2>
             <div className="formWrapper">
               <label htmlFor="username">Brukernavn:</label>
               <input
+                id="username"
                 type="text"
                 value={username}
                 onChange={handleUsername}
@@ -68,6 +65,7 @@ const Login = ({ setUser, user, setTrophy }) => {
             <div className="formWrapper">
               <label htmlFor="password">Passord:</label>
               <input
+                id="password"
                 type="password"
                 value={password}
                 onChange={handlePassword}

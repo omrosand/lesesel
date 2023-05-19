@@ -28,6 +28,7 @@ const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
     <article className="navScoreboard">
       {user ? (
         <>
+        <section className="avatarTextSection">
           <section className="imgSection">
             <Link
               to="/minprofil"
@@ -38,7 +39,7 @@ const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
             </Link>
           </section>
 
-          <section>
+          <section className="textSection">
             <Link
               to="/minprofil"
               onClick={() => setActivePath("/minprofil")}
@@ -59,10 +60,15 @@ const NavScoreboard = ({ user, trophy, activePath, setActivePath }) => {
               </tbody>
             </table>
           </section>
+          </section> 
 
           <section className="imgSection">
             {trophy === "" ? (
-              <Link to="/minprofil">
+              <Link
+                to="/minprofil"
+                onClick={() => setActivePath("/minprofil")}
+                className={"/minprofil" === activePath ? "active" : ""}
+              >
                 <button>Velg favoritt trofé</button>
               </Link>
             ) : (

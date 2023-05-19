@@ -1,7 +1,32 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { client } from "../utils/sanityclient";
 
-const Favorites = () => {
+const Favorites = ({ user }) => {
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      try {
+        const response = await client.fetch(
+          `*[_type == "users" && _id == "${user._id}"][0]{
+            favoriteBooks
+          }`
+        );
+        if (response) {
+          setFavoriteBooks(response.favoriteBooks);
+        }
+      } catch (error) {
+        console.error("Error fetching favorites:", error);
+      }
+    };
+
+    if (user) {
+      fetchFavorites();
+    }
+  }, [user]);
+
   return (
     <>
       <Helmet>
@@ -9,13 +34,24 @@ const Favorites = () => {
       </Helmet>
       <article className="pageCard">
         <h1>Favoritter</h1>
-        <p>
-          Du har ikke lagt til noen favoritter enda. Gå til{" "}
-          <Link to="/registrerbok">Registrer</Link> siden for å søke og legge
-          til bøker i dine favoritter.
-        </p>
+        {favoriteBooks.length > 0 ? (
+          <ol>
+            {favoriteBooks.map((book) => (
+              <li key={book._key}>
+                <p>{book.title}</p>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p>
+            Du har ikke lagt til noen favoritter enda. Gå til{" "}
+            <Link to="/registrerbok">Registrer</Link> siden for å søke og legge
+            til bøker i dine favoritter.
+          </p>
+        )}
       </article>
     </>
   );
 };
+
 export default Favorites;

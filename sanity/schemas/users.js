@@ -14,16 +14,16 @@ export default {
             title: "Avatar"
         },
         {
-            name: "invites",
-            title: "Invitasjoner",
-            type: "array",
-            of: [{type: 'invites'}]
-        },
-        {
             name: "books",
             title: "Bøker",
             type: "array",
             of: [{type: 'books'}]
+        },
+        {
+            name: "favoriteBooks",
+            title: "Favorittbøker",
+            type: "array",
+            of: [{type: "favoriteBooks"}]
         },
         {
             name: "password",

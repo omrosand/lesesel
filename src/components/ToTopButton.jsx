@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const ToTopButton = () => {
-  //https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
+  //Kode inspirert av: https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
