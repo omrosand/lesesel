@@ -31,19 +31,15 @@ const Login = ({ setUser, user, setTrophy }) => {
         books
       }`
       );
-      console.log(response);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response));
         setUser(response);
-        console.log(user);
       } else {
         alert("Feil brukernavn eller passord, prøv igjen!");
       }
     } catch (error) {
       console.error(error);
     }
-
-    console.log(username, password);
   };
 
   return (

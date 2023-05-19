@@ -92,7 +92,6 @@ const SearchBar = ({ user, setUser }) => {
         books
       }`
       );
-      console.log(response);
       if (response) {
         localStorage.setItem("user", JSON.stringify(response));
         setUser(response);

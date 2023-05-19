@@ -56,9 +56,9 @@ const Home = () => {
           <article>
             <h2>Favoritter</h2>
             <p>
-              Har du funnet en bok du liker? Da kan du legge den til i en 
-              liste med dine favoritter. Trykk på knappen under for å se hvilke 
-              bøker du har favorisert. 
+              Har du funnet en bok du liker? Da kan du legge den til i en
+              liste med dine favoritter. Trykk på knappen under for å se hvilke
+              bøker du har favorisert.
             </p>
             <button>
               <Link to="/favoritter" className="homeLink">

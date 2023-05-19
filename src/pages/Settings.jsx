@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { writeClient } from "../utils/sanityclient";
 
-const Settings = ({user, setUser}) => {
+const Settings = ({ user, setUser }) => {
   function darkMode() {
     const element = document.body;
 
