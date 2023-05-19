@@ -87,7 +87,7 @@ function App() {
               element={<RegisterBook user={user} setUser={setUser} />}
             />
             <Route path="/lesteboker" element={<ReadBooks user={user} />} />
-            <Route path="/favoritter" element={<Favorites user={user}/>} />
+            <Route path="/favoritter" element={<Favorites user={user} />} />
             <Route path="/registrer-bruker" element={<RegisterUser />} />
             <Route
               path="/login"
