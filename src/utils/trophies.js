@@ -2,7 +2,7 @@ const trophies = [
   {
     id: 1,
     name: "Lest din første bok!",
-    path: "/src/img/trophies/FørsteBok.webp",
+    path: "/src/img/trophies/ForsteBok.webp",
     condition: (user) => {
       return user.books?.length > 0;
     },
@@ -10,7 +10,7 @@ const trophies = [
   {
     id: 2,
     name: "Lagt til din første venn!",
-    path: "/src/img/trophies/FørsteVenn.webp",
+    path: "/src/img/trophies/ForsteVenn.webp",
     condition: (user) => {
       return user.friends?.length > 0;
     },
@@ -18,7 +18,7 @@ const trophies = [
   {
     id: 3,
     name: "Lest 10 bøker!",
-    path: "/src/img/trophies/10Bøker.webp",
+    path: "/src/img/trophies/10Boker.webp",
     condition: (user) => {
       return user.books?.length > 9;
     },
@@ -26,7 +26,7 @@ const trophies = [
   {
     id: 4,
     name: "Lest 50 bøker!",
-    path: "/src/img/trophies/50Bøker.webp",
+    path: "/src/img/trophies/50Boker.webp",
     condition: (user) => {
       return user.books?.length > 49;
     },
@@ -72,7 +72,7 @@ const trophies = [
   {
     id: 8,
     name: "Førsteplass på scoreboard!",
-    path: "/src/img/trophies/FørstePlass.webp",
+    path: "/src/img/trophies/ForstePlass.webp",
     condition: (user) => {
       return false;
     },
