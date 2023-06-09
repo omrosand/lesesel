@@ -8,7 +8,6 @@ import { writeClient } from "../utils/sanityclient";
 const SearchBar = ({ user, setUser }) => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState([]);
-  const [total, setTotal] = useState();
   const [selectedBook, setSelectedBook] = useState(null);
   const [loading, setLoading] = useState(false);
   const [addBookLoading, setAddBookLoading] = useState(false);
@@ -23,7 +22,6 @@ const SearchBar = ({ user, setUser }) => {
       .then((response) => response.json())
       .then((data) => {
         setResult(data.records);
-        setTotal(data.total);
         setLoading(false);
       })
       .catch((error) => {
@@ -168,7 +166,6 @@ const SearchBar = ({ user, setUser }) => {
           Søk
         </button>
       </form>
-      <h3 className="resultsH3">{total} treff på søk:</h3>
       {loading ? (
         <>
           <h4>Henter bøker...</h4>
